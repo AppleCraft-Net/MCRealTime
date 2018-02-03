@@ -1,6 +1,6 @@
 name: MCRealTime
-version: alpha-1.2
-main: de.gamingchain.Main
+version: beta-1.0
+main: net.viewdns.applecraft.Main
 author: CrashKillerYT
-authors: [AppleCraft Team, GamingChain Team]
+authors: [AppleCraft Team]
 webiste: http://applecraft.viewdns.net
