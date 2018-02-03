@@ -24,6 +24,10 @@ Do not worry, if you got a Message of this plugin in the minecraft chat. This me
 
  
 
+The only one complication is, that you can not execute the /time set <time> command !
+
+ 
+
 That's it, now you can fully enjoy the plugin.
 
  
@@ -36,12 +40,12 @@ Dear Greeting CrashKillerYT
 
  
 
-©Copyright AppleCraft Company <year>
+©Copyright 2018 AppleCraft Company
 
-©Copyright MCRealTime Plugin <year>
+©Copyright 2018 MCRealTime Plugin
 
-©Main Copyright CrashKillerYT <year>
+©Main Copyright 2018 CrashKillerYT
 
-©Main Copyright Gabriel Jan Lukas M. <year
+©Main Copyright 2018 Gabriel Jan Lukas M.
 
  
