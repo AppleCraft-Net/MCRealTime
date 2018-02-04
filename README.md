@@ -24,7 +24,7 @@ Do not worry, if you got a Message of this plugin in the minecraft chat. This me
 
  
 
-The only one complication is, that you can not execute the /time set "time" command !
+The only one complication is, that you can not execute the /time set <time> command !
 
  
 
@@ -33,6 +33,8 @@ That's it, now you can fully enjoy the plugin.
  
 
 I wish you a lot of fun with my plugin!
+
+Here is the source code: https://github.com/CrashKillerYT/MCRealTime
 
  
 
