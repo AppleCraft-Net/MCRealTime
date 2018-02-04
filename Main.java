@@ -14,10 +14,16 @@ import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitRunnable;
 
+import net.gravitydevelopment.updater.Updater;
+import net.gravitydevelopment.updater.Updater.UpdateType;
+
 public class Main extends JavaPlugin implements Listener{
 	
+	@SuppressWarnings("unused")
 	@Override
 	public void onEnable() {
+		Updater updater = new Updater(this, 286270, getFile(), UpdateType.DEFAULT, true);
+		
 		Bukkit.getPluginManager().registerEvents(this, this);
 		System.out.println("§2Time Server started");
 		
