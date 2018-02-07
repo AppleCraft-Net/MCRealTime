@@ -19,11 +19,10 @@ import net.gravitydevelopment.updater.Updater.UpdateType;
 
 public class Main extends JavaPlugin implements Listener{
 	
-	@SuppressWarnings("unused")
 	@Override
 	public void onEnable() {
+		@SuppressWarnings("unused")
 		Updater updater = new Updater(this, 286270, getFile(), UpdateType.DEFAULT, true);
-		
 		Bukkit.getPluginManager().registerEvents(this, this);
 		System.out.println("§2Time Server started");
 		
@@ -64,13 +63,13 @@ public class Main extends JavaPlugin implements Listener{
 			p.sendMessage("");
 			p.sendMessage("");
 			p.sendMessage("__________________________________________________");
-			p.sendMessage("§a[TimeServer]");
-			p.sendMessage("§6Version: alpha-1.2");
-			p.sendMessage("§6Author: CrashKillerYT");
-			p.sendMessage("§6Website:http://applecraft.viewdns.net/");
-			p.sendMessage("§6If you have some problems, inform me at:");
+			p.sendMessage("§a" + getDescription().getName());
+			p.sendMessage("§6Version: " + getDescription().getVersion());
+			p.sendMessage("§6Author: " + getDescription().getAuthors());
+			p.sendMessage("§6Website: " + getDescription().getWebsite());
+			p.sendMessage("§6If you have some problems, inform me at: ");
 			p.sendMessage("§6crashkillerlps.de@gmail.com");
-			p.sendMessage("§cATTENTION : Do first /gamerule dodaylightcycle false !!!");
+			p.sendMessage("§cATTENTION: Do first /gamerule dodaylightcycle false !!!");
 			p.sendMessage("§cYou can not type this command: /time set <time> !");
 			p.sendMessage("§bThis plugin is an OpenSource project !");
 			p.sendMessage("§bIt means, that you have all rights reserved !");
