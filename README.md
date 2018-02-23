@@ -1,3 +1,4 @@
+
 Love community,
 
  
@@ -18,9 +19,25 @@ Minecraft no longer moved independently, but only controlled by the plugin. Simp
 
 "/gamerule doDaylightCycle false".
 
- 
 
-Do not worry, if you got a Message of this plugin in the minecraft chat. This message could only see user, who have op or the "*" rights !
+
+-------------------------------------------------------------------------------------------------------------------------------------------- 
+
+Here are maybe important commands:
+
+
+
+"/info" - You will get news and status about this plugin.
+
+
+
+"/contact" - You will get information about my contact details, if you have a problem or if you will send a feedback for my plugin.
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+
 
  
 
