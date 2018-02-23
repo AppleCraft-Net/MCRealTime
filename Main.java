@@ -4,26 +4,24 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import org.bukkit.Bukkit;
-import org.bukkit.Sound;
 import org.bukkit.World;
+import org.bukkit.command.Command;
+import org.bukkit.command.CommandExecutor;
+import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import org.bukkit.event.EventHandler;
-import org.bukkit.event.EventPriority;
-import org.bukkit.event.Listener;
-import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitRunnable;
 
 import net.gravitydevelopment.updater.Updater;
 import net.gravitydevelopment.updater.Updater.UpdateType;
 
-public class Main extends JavaPlugin implements Listener{
+public class Main extends JavaPlugin implements CommandExecutor{
 	
 	@Override
 	public void onEnable() {
 		@SuppressWarnings("unused")
 		Updater updater = new Updater(this, 286270, getFile(), UpdateType.DEFAULT, true);
-		Bukkit.getPluginManager().registerEvents(this, this);
+		getCommand("info").setExecutor(this);
 		System.out.println("§2Time Server started");
 		
 		new BukkitRunnable() {
@@ -50,13 +48,12 @@ public class Main extends JavaPlugin implements Listener{
 		return hours+minutes+18000;
 	}
 	
-	@EventHandler(priority = EventPriority.HIGH)
-	public void onJoin(PlayerJoinEvent e) {
+	@Override
+	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 		
-		Player p = e.getPlayer();
+		Player p = (Player)sender;
 		
-		if (p.isOp() || p.hasPermission("*")) {
-			p.playSound(p.getLocation(), Sound.ENDERDRAGON_GROWL, 3, 1);
+		if(cmd.getName().equalsIgnoreCase("info")) {
 			p.sendMessage("");
 			p.sendMessage("");
 			p.sendMessage("");
@@ -75,6 +72,7 @@ public class Main extends JavaPlugin implements Listener{
 			p.sendMessage("§bIt means, that you have all rights reserved !");
 			p.sendMessage("§bYou have all rights reserved, except of the MIT License !");
 			p.sendMessage("§k...§r§b We are now released ! §r§k...");
+			p.sendMessage("§6We will support the latest versions soon, too !");
 			p.sendMessage("§6I wish you much fun with that. Yours Faithfuly CrashKillerYT ! :)");
 			p.sendMessage("__________________________________________________");
 			p.sendMessage("");
@@ -84,6 +82,32 @@ public class Main extends JavaPlugin implements Listener{
 			p.sendMessage("");
 		}
 		
-			}	
+		if(cmd.getName().equalsIgnoreCase("contact")) {
+			p.sendMessage("");
+			p.sendMessage("");
+			p.sendMessage("");
+			p.sendMessage("");
+			p.sendMessage("");
+			p.sendMessage("__________________________________________________");
+			p.sendMessage("§a" + getDescription().getName());
+			p.sendMessage("§6You have some problems or you want post a feedback ?");
+			p.sendMessage("§6No problem ! You could me send your feedback on the chat of:");
+			p.sendMessage("§6https://dev.bukkit.org/projects/mcrealtime");
+			p.sendMessage("");
+			p.sendMessage("§6If you have some problems, you can contact me under:");
+			p.sendMessage("§6E-Mail: crashkillerlps.de@gmail.com");
+			p.sendMessage("§bSometimes on my teamspeak 3: applecraft.viewdns.net");
+			p.sendMessage("§aTelegram: CrashKillerYT");
+			p.sendMessage("§6Thanks for understanding !");
+			p.sendMessage("§6See ya around :)");
+			p.sendMessage("__________________________________________________");
+			p.sendMessage("");
+			p.sendMessage("");
+			p.sendMessage("");
+			p.sendMessage("");
+			p.sendMessage("");
+		}
 		
-				}
+		return true;
+	}
+		}
