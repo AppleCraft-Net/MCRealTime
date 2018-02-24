@@ -16,11 +16,12 @@ import net.gravitydevelopment.updater.Updater;
 
 public class Main extends JavaPlugin implements CommandExecutor{
 	
-	@SuppressWarnings("unused")
 	@Override
 	public void onEnable() {
+		@SuppressWarnings("unused")
 		Updater updater = new Updater(this, 286270, getFile(), Updater.UpdateType.DEFAULT, true);
 		getCommand("info").setExecutor(this);
+		getCommand("contact").setExecutor(this);
 		System.out.println("§2Time Server started");
 		
 		new BukkitRunnable() {
