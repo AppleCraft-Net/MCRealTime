@@ -73,8 +73,6 @@ public class Main extends JavaPlugin implements CommandExecutor{
 				p.sendMessage("§bThis plugin is an OpenSource project !");
 				p.sendMessage("§bIt means, that you have all rights reserved !");
 				p.sendMessage("§bYou have all rights reserved, except of the MIT License !");
-				p.sendMessage("§k...§r§b We are now released ! §r§k...");
-				p.sendMessage("§6We will support the latest versions soon, too !");
 				p.sendMessage("§6I wish you much fun with that. Yours Faithfuly CrashKillerYT ! :)");
 				p.sendMessage("__________________________________________________");
 				p.sendMessage("");
