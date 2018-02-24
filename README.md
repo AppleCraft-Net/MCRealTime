@@ -1,3 +1,4 @@
+ 
 
 Love community,
 
@@ -19,25 +20,41 @@ Minecraft no longer moved independently, but only controlled by the plugin. Simp
 
 "/gamerule doDaylightCycle false".
 
-
+ 
 
 -------------------------------------------------------------------------------------------------------------------------------------------- 
 
 Here are maybe important commands:
 
-
+ 
 
 "/info" - You will get news and status about this plugin.
 
-
+ 
 
 "/contact" - You will get information about my contact details, if you have a problem or if you will send a feedback for my plugin.
 
+ 
 
+Permission: 
+
+ "/info" - mcrealtime.info
+
+ "/contact" - mcrealtime.contact
 
 ---------------------------------------------------------------------------------------------------------------------------------------------
 
+ 
 
+IMPORTANT:
+
+ 
+
+It only works on JRE/JDK 8
+
+ 
+
+IT SUPPORTS THE VERSIONS 1.8 - 1.12.2 ! 
 
  
 
