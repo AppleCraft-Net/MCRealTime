@@ -1,5 +1,5 @@
 name: MCRealTime
-version: 1.2
+version: 1.3
 main: net.viewdns.applecraft.Main
 author: CrashKillerYT
 authors: [AppleCraft Team]
@@ -10,6 +10,8 @@ commands:
   info: 
     usage: /<command>
     description: You got news and status about this plugin
+    permission: mcrealtime.info
   contact: 
     usage: /<command>
     description: Here you wil find out my contact details
+    permission: mcrealtime.contact
