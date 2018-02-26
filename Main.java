@@ -18,11 +18,11 @@ public class Main extends JavaPlugin implements CommandExecutor{
 	
 	@Override
 	public void onEnable() {
+		System.out.println("§cTimeServer started !");
 		@SuppressWarnings("unused")
 		Updater updater = new Updater(this, 286270, getFile(), Updater.UpdateType.DEFAULT, true);
 		getCommand("info").setExecutor(this);
 		getCommand("contact").setExecutor(this);
-		System.out.println("§2Time Server started");
 		
 		new BukkitRunnable() {
 			
@@ -37,7 +37,7 @@ public class Main extends JavaPlugin implements CommandExecutor{
 	
 	@Override
 	public void onDisable() {
-		System.out.println("§cTime Server stopped");
+		System.out.println("§2TimeServer stopped !");
 	}
 	
 	private static Integer getTime() {
