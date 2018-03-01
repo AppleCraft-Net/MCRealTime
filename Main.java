@@ -66,8 +66,8 @@ public class Main extends JavaPlugin implements CommandExecutor{
 				p.sendMessage("§6Version: " + getDescription().getVersion());
 				p.sendMessage("§6Author: " + getDescription().getAuthors());
 				p.sendMessage("§6Website: " + getDescription().getWebsite());
-				p.sendMessage("§6If you have some problems, inform me at: ");
-				p.sendMessage("§6crashkillerlps.de@gmail.com");
+				p.sendMessage("§6You will get more infos with this command:");
+				p.sendMessage("§b/contact");
 				p.sendMessage("§cATTENTION: Do first /gamerule dodaylightcycle false !!!");
 				p.sendMessage("§cYou can not type this command: /time set <time> !");
 				p.sendMessage("§bThis plugin is an OpenSource project !");
