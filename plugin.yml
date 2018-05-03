@@ -13,5 +13,5 @@ commands:
     permission: mcrealtime.info
   contact: 
     usage: /<command>
-    description: Here you wil find out my contact details
+    description: Here you will find out my contact details
     permission: mcrealtime.contact
