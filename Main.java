@@ -9,6 +9,7 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitRunnable;
 
@@ -16,10 +17,11 @@ import net.gravitydevelopment.updater.Updater;
 
 public class Main extends JavaPlugin implements CommandExecutor{
 	
+	
+	@SuppressWarnings("unused")
 	@Override
 	public void onEnable() {
 		System.out.println("§cTimeServer started !");
-		@SuppressWarnings("unused")
 		Updater updater = new Updater(this, 286270, getFile(), Updater.UpdateType.DEFAULT, true);
 		getCommand("info").setExecutor(this);
 		getCommand("contact").setExecutor(this);
@@ -52,7 +54,6 @@ public class Main extends JavaPlugin implements CommandExecutor{
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 		
 		Player p = (Player)sender;
-		
 		if(cmd.getName().equalsIgnoreCase("info")) {
 			if(p.hasPermission("mcrealtime.info")) {
 				p.sendMessage("");
@@ -142,7 +143,49 @@ public class Main extends JavaPlugin implements CommandExecutor{
 				p.sendMessage("");
 				p.sendMessage("");
 			}
+			
 		}
+		
+		if(cmd.getName().equalsIgnoreCase("deactivatetime")) {
+			if(p.hasPermission("mcrealtime.deactivate")) {
+				p.sendMessage("");
+				p.sendMessage("");
+				p.sendMessage("");
+				p.sendMessage("");
+				p.sendMessage("");
+				p.sendMessage("__________________________________________________");
+				p.sendMessage("§a" + getDescription().getName());
+				p.sendMessage("");
+				p.sendMessage("§cPlugin was already deactivated !");
+				p.sendMessage("§6IMPORTANT: If you'd like to reactivate, please reload your server !!!");
+				p.sendMessage("__________________________________________________");
+				p.sendMessage("");
+				p.sendMessage("");
+				p.sendMessage("");
+				p.sendMessage("");
+				p.sendMessage("");
+				
+				Plugin MCRealTime = getServer().getPluginManager().getPlugin("MCRealTime");
+				if(MCRealTime != null)
+					getServer().getPluginManager().disablePlugin(MCRealTime);
+		} else {
+			p.sendMessage("");
+			p.sendMessage("");
+			p.sendMessage("");
+			p.sendMessage("");
+			p.sendMessage("");
+			p.sendMessage("__________________________________________________");
+			p.sendMessage("§a" + getDescription().getName());
+			p.sendMessage("");
+			p.sendMessage("§cYou do not have permissions to perform this command !");
+			p.sendMessage("__________________________________________________");
+			p.sendMessage("");
+			p.sendMessage("");
+			p.sendMessage("");
+			p.sendMessage("");
+			p.sendMessage("");
+		}
+		  }
 		
 		return true;
 	}
