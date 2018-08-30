@@ -1,5 +1,5 @@
 name: MCRealTime
-version: 1.8
+version: 1.9
 main: net.viewdns.applecraft.Main
 author: CrashKillerYT
 authors: [AppleCraft Team]
@@ -13,3 +13,6 @@ commands:
   contact: 
     usage: /<command>
     description: Here you will find out my contact details
+  deactivatetime:
+    usage: /<command>
+    description: You'll deactivate this plugin here
