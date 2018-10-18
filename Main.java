@@ -9,7 +9,6 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitRunnable;
 
@@ -17,14 +16,12 @@ import net.gravitydevelopment.updater.Updater;
 
 public class Main extends JavaPlugin implements CommandExecutor{
 	
-	
 	@SuppressWarnings("unused")
 	@Override
 	public void onEnable() {
 		System.out.println("§cTimeServer started !");
 		Updater updater = new Updater(this, 286270, getFile(), Updater.UpdateType.DEFAULT, true);
-		getCommand("info").setExecutor(this);
-		getCommand("contact").setExecutor(this);
+		getCommand("mcrealtime").setExecutor(this);
 		
 		new BukkitRunnable() {
 			
@@ -32,6 +29,7 @@ public class Main extends JavaPlugin implements CommandExecutor{
 			public void run() {
 				for(World w : Bukkit.getWorlds()) {
 					w.setTime(getTime());
+					w.setGameRuleValue("doDaylightCycle", "false");
 				}
 			}
 		}.runTaskTimer(this, 0, 1);
@@ -52,10 +50,28 @@ public class Main extends JavaPlugin implements CommandExecutor{
 	
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
-		
 		Player p = (Player)sender;
-		if(cmd.getName().equalsIgnoreCase("info")) {
-			if(p.hasPermission("mcrealtime.info")) {
+		
+		if(p.hasPermission("mcrealtime.use")) {
+			if(args.length != 1) {
+				p.sendMessage("");
+				p.sendMessage("");
+				p.sendMessage("");
+				p.sendMessage("");
+				p.sendMessage("");
+				p.sendMessage("__________________________________________________");
+				p.sendMessage("§a" + getDescription().getName());
+				p.sendMessage("");
+				p.sendMessage("§6 Here is a list with all avaible comments: ");
+				p.sendMessage("§c/mcrealtime info §r- §7You'll get important information to this plugin");
+				p.sendMessage("§c/mcrealtime contact §r - §7You'll get my contact information");
+				p.sendMessage("__________________________________________________");
+				p.sendMessage("");
+				p.sendMessage("");
+				p.sendMessage("");
+				p.sendMessage("");
+				p.sendMessage("");
+			}else if(args[0].equalsIgnoreCase("info")) {
 				p.sendMessage("");
 				p.sendMessage("");
 				p.sendMessage("");
@@ -68,8 +84,7 @@ public class Main extends JavaPlugin implements CommandExecutor{
 				p.sendMessage("§6Author: " + getDescription().getAuthors());
 				p.sendMessage("§6Website: " + getDescription().getWebsite());
 				p.sendMessage("§6You will get more infos with this command:");
-				p.sendMessage("§b/contact");
-				p.sendMessage("§cATTENTION: Do first /gamerule dodaylightcycle false !!!");
+				p.sendMessage("§b/mcrealtime contact");
 				p.sendMessage("§cYou can not type this command: /time set <time> !");
 				p.sendMessage("§bThis plugin is an OpenSource project !");
 				p.sendMessage("§bIt means, that you have all rights reserved !");
@@ -81,27 +96,7 @@ public class Main extends JavaPlugin implements CommandExecutor{
 				p.sendMessage("");
 				p.sendMessage("");
 				p.sendMessage("");
-			}else {
-				p.sendMessage("");
-				p.sendMessage("");
-				p.sendMessage("");
-				p.sendMessage("");
-				p.sendMessage("");
-				p.sendMessage("__________________________________________________");
-				p.sendMessage("§a" + getDescription().getName());
-				p.sendMessage("");
-				p.sendMessage("§cYou do not have permissions to perform this command !");
-				p.sendMessage("__________________________________________________");
-				p.sendMessage("");
-				p.sendMessage("");
-				p.sendMessage("");
-				p.sendMessage("");
-				p.sendMessage("");
-			}
-		}
-		
-		if(cmd.getName().equalsIgnoreCase("contact")) {
-			if(p.hasPermission("mcrealtime.contact")) {
+			}else if(args[0].equalsIgnoreCase("contact")) {
 				p.sendMessage("");
 				p.sendMessage("");
 				p.sendMessage("");
@@ -126,49 +121,8 @@ public class Main extends JavaPlugin implements CommandExecutor{
 				p.sendMessage("");
 				p.sendMessage("");
 				p.sendMessage("");
-			}else {
-				p.sendMessage("");
-				p.sendMessage("");
-				p.sendMessage("");
-				p.sendMessage("");
-				p.sendMessage("");
-				p.sendMessage("__________________________________________________");
-				p.sendMessage("§a" + getDescription().getName());
-				p.sendMessage("");
-				p.sendMessage("§cYou do not have permissions to perform this command !");
-				p.sendMessage("__________________________________________________");
-				p.sendMessage("");
-				p.sendMessage("");
-				p.sendMessage("");
-				p.sendMessage("");
-				p.sendMessage("");
 			}
-			
-		}
-		
-		if(cmd.getName().equalsIgnoreCase("deactivatetime")) {
-			if(p.hasPermission("mcrealtime.deactivate")) {
-				p.sendMessage("");
-				p.sendMessage("");
-				p.sendMessage("");
-				p.sendMessage("");
-				p.sendMessage("");
-				p.sendMessage("__________________________________________________");
-				p.sendMessage("§a" + getDescription().getName());
-				p.sendMessage("");
-				p.sendMessage("§cPlugin was already deactivated !");
-				p.sendMessage("§6IMPORTANT: If you'd like to reactivate, please reload your server !!!");
-				p.sendMessage("__________________________________________________");
-				p.sendMessage("");
-				p.sendMessage("");
-				p.sendMessage("");
-				p.sendMessage("");
-				p.sendMessage("");
-				
-				Plugin MCRealTime = getServer().getPluginManager().getPlugin("MCRealTime");
-				if(MCRealTime != null)
-					getServer().getPluginManager().disablePlugin(MCRealTime);
-		} else {
+		}else {
 			p.sendMessage("");
 			p.sendMessage("");
 			p.sendMessage("");
@@ -185,8 +139,6 @@ public class Main extends JavaPlugin implements CommandExecutor{
 			p.sendMessage("");
 			p.sendMessage("");
 		}
-		  }
-		
 		return true;
 	}
-		}
+}
