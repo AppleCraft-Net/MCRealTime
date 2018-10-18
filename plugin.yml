@@ -1,5 +1,5 @@
 name: MCRealTime
-version: 1.9
+version: 2.0
 main: net.viewdns.applecraft.Main
 author: CrashKillerYT
 authors: [AppleCraft Team]
@@ -7,12 +7,5 @@ website: http://applecraft.viewdns.net
 description: This Plugin put the real time live in the minecraft time
 
 commands: 
-  info: 
-    usage: /<command>
-    description: You got news and status about this plugin
-  contact: 
-    usage: /<command>
-    description: Here you will find out my contact details
-  deactivatetime:
-    usage: /<command>
-    description: You'll deactivate this plugin here
+  mcrealtime: 
+    description: Main command. Type it to find more out
