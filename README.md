@@ -4,27 +4,19 @@ I have once again brought out a plugin, which allows the real-time in Minecraft.
 
 You do not have to do much to get the plugin working. Just put the plugin in the normal plugins folder. This also applies to the users who use BungeeCord!
 
-Now you have to change the game rule in all worlds that you own (for the BungeeCord users also the subserver), so that the time in
-
-Minecraft no longer moved independently, but only controlled by the plugin. Simply use the following command:
-
-"/gamerule doDaylightCycle false".
 
 Here are maybe important commands:
 
-"/info" - You will get news and status about this plugin.
+"/mcrealtime info" - You will get news and status about this plugin.
 
-"/contact" - You will get information about my contact details, if you have a problem or if you will send a feedback for my plugin.
-
-"/deactivatetime" - You will deactivate the realtime and you will change to the minecraft time.
+"/mcrealtime contact" - You will get information about my contact details, if you have a problem or if you will send a feedback for my plugin.
 
 Permission:
+WITH mcrealtime.* YOU'LL GET ALL PERMISSIONS TO THIS PLUGIN
 
-"/info" - mcrealtime.info
+"/mcrealtime info" - mcrealtime.use
 
-"/contact" - mcrealtime.contact
-
-"/deactivatetime" - mcrealtime.deactivate
+"/mcrealtime contact" - mcrealtime.use
 
 IMPORTANT:
 
