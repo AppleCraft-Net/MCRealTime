@@ -1,3 +1,7 @@
+# Text file
+*.txt
+*.md
+
 # Compiled class file
 *.class
 
