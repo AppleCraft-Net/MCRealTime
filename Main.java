@@ -16,6 +16,8 @@ import net.gravitydevelopment.updater.Updater;
 
 public class Main extends JavaPlugin implements CommandExecutor{
 	
+	public static String prefix = "§a♦ MCRealTime ♦";
+	
 	@SuppressWarnings("unused")
 	@Override
 	public void onEnable() {
@@ -60,11 +62,12 @@ public class Main extends JavaPlugin implements CommandExecutor{
 				p.sendMessage("");
 				p.sendMessage("");
 				p.sendMessage("__________________________________________________");
-				p.sendMessage("§a" + getDescription().getName());
+				p.sendMessage(Main.prefix);
 				p.sendMessage("");
-				p.sendMessage("§6 Here is a list with all avaible comments: ");
+				p.sendMessage("§6Here is a list with all avaible commands: ");
 				p.sendMessage("§c/mcrealtime info §r- §7You'll get important information to this plugin");
-				p.sendMessage("§c/mcrealtime contact §r - §7You'll get my contact information");
+				p.sendMessage("§c/mcrealtime contact §r- §7You'll get my contact information");
+				p.sendMessage("§c/mcrealtime changelog §r- §7You'll get all changes about the last update");
 				p.sendMessage("__________________________________________________");
 				p.sendMessage("");
 				p.sendMessage("");
@@ -78,12 +81,12 @@ public class Main extends JavaPlugin implements CommandExecutor{
 				p.sendMessage("");
 				p.sendMessage("");
 				p.sendMessage("__________________________________________________");
-				p.sendMessage("§a" + getDescription().getName());
+				p.sendMessage(Main.prefix);
 				p.sendMessage("");
-				p.sendMessage("§6Version: " + getDescription().getVersion());
-				p.sendMessage("§6Author: " + getDescription().getAuthors());
-				p.sendMessage("§6Website: " + getDescription().getWebsite());
-				p.sendMessage("§6You will get more infos with this command:");
+				p.sendMessage("§6Version: §a" + getDescription().getVersion());
+				p.sendMessage("§6Author: §a" + getDescription().getAuthors());
+				p.sendMessage("§6Website: §a" + getDescription().getWebsite());
+				p.sendMessage("§6You will get more information with this command:");
 				p.sendMessage("§b/mcrealtime contact");
 				p.sendMessage("§cYou can not type this command: /time set <time> !");
 				p.sendMessage("§bThis plugin is an OpenSource project !");
@@ -103,18 +106,42 @@ public class Main extends JavaPlugin implements CommandExecutor{
 				p.sendMessage("");
 				p.sendMessage("");
 				p.sendMessage("__________________________________________________");
-				p.sendMessage("§a" + getDescription().getName());
+				p.sendMessage(Main.prefix);
 				p.sendMessage("");
 				p.sendMessage("§6You have some problems or you want post a feedback ?");
 				p.sendMessage("§6No problem ! You could me send your feedback on the chat of:");
 				p.sendMessage("§6https://dev.bukkit.org/projects/mcrealtime");
 				p.sendMessage("");
 				p.sendMessage("§6If you have some problems, you can contact me under:");
-				p.sendMessage("§6E-Mail: crashkillerlps.de@gmail.com");
-				p.sendMessage("§bSometimes on my teamspeak 3: applecraft.viewdns.net");
-				p.sendMessage("§aTelegram: CrashKillerYT");
+				p.sendMessage("§6E-Mail: §acrashkillerlps.de@gmail.com");
+				p.sendMessage("§bSometimes on my teamspeak 3: §aapplecraft.viewdns.net");
+				p.sendMessage("§3Telegram: §aCrashKillerYT");
 				p.sendMessage("§6Thanks for understanding !");
 				p.sendMessage("§6See ya around :)");
+				p.sendMessage("__________________________________________________");
+				p.sendMessage("");
+				p.sendMessage("");
+				p.sendMessage("");
+				p.sendMessage("");
+				p.sendMessage("");
+			}else if(args[0].equalsIgnoreCase("changelog")) {
+				p.sendMessage("");
+				p.sendMessage("");
+				p.sendMessage("");
+				p.sendMessage("");
+				p.sendMessage("");
+				p.sendMessage("__________________________________________________");
+				p.sendMessage(Main.prefix);
+				p.sendMessage("§6Version: §a" + getDescription().getVersion());
+				p.sendMessage("§6Made by §a" + getDescription().getAuthors());
+				p.sendMessage("§6Description of the plugin: §a" + getDescription().getDescription());
+				p.sendMessage("");
+				p.sendMessage("§6Changelogs:");
+				p.sendMessage("§2+ Added command /mcrealtime changelog");
+				p.sendMessage("§2+ Added Versionsupport from 1.8 to 1.13.2");
+				p.sendMessage("§2+ Added new Chat-Design");
+				p.sendMessage("§c- Removed old Chat-Design");
+				p.sendMessage("§c- Removed speeling mistake");
 				p.sendMessage("__________________________________________________");
 				p.sendMessage("");
 				p.sendMessage("");
@@ -129,7 +156,7 @@ public class Main extends JavaPlugin implements CommandExecutor{
 			p.sendMessage("");
 			p.sendMessage("");
 			p.sendMessage("__________________________________________________");
-			p.sendMessage("§a" + getDescription().getName());
+			p.sendMessage(Main.prefix);
 			p.sendMessage("");
 			p.sendMessage("§cYou do not have permissions to perform this command !");
 			p.sendMessage("__________________________________________________");
