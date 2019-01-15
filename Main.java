@@ -21,7 +21,7 @@ public class Main extends JavaPlugin implements CommandExecutor{
 	@SuppressWarnings("unused")
 	@Override
 	public void onEnable() {
-		System.out.println("§cTimeServer started !");
+		System.out.println("§2TimeServer started !");
 		Updater updater = new Updater(this, 286270, getFile(), Updater.UpdateType.DEFAULT, true);
 		getCommand("mcrealtime").setExecutor(this);
 		
@@ -39,7 +39,7 @@ public class Main extends JavaPlugin implements CommandExecutor{
 	
 	@Override
 	public void onDisable() {
-		System.out.println("§2TimeServer stopped !");
+		System.out.println("§cTimeServer stopped !");
 	}
 	
 	private static Integer getTime() {
