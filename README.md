@@ -1,6 +1,6 @@
  
 
-Love community,.
+Love community,
 
  
 
