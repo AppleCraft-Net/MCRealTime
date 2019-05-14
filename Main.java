@@ -16,7 +16,7 @@ import net.gravitydevelopment.updater.Updater;
 
 public class Main extends JavaPlugin implements CommandExecutor{
 	
-	public static String prefix = "§a♦ MCRealTime ♦";
+	public String prefix = "§a♦ MCRealTime" + " §2v" + getDescription().getVersion() + " §2♦";
 	
 	@SuppressWarnings("unused")
 	@Override
@@ -62,7 +62,7 @@ public class Main extends JavaPlugin implements CommandExecutor{
 				p.sendMessage("");
 				p.sendMessage("");
 				p.sendMessage("__________________________________________________");
-				p.sendMessage(Main.prefix + " §av" + getDescription().getVersion());
+				p.sendMessage(prefix);
 				p.sendMessage("");
 				p.sendMessage("§6Here is a list with all avaible commands: ");
 				p.sendMessage("§c/mcrealtime info §r- §7You'll get important information to this plugin");
@@ -81,10 +81,9 @@ public class Main extends JavaPlugin implements CommandExecutor{
 				p.sendMessage("");
 				p.sendMessage("");
 				p.sendMessage("__________________________________________________");
-				p.sendMessage(Main.prefix);
+				p.sendMessage(prefix);
 				p.sendMessage("");
-				p.sendMessage("§6Version: §a" + getDescription().getVersion());
-				p.sendMessage("§6Author: §a" + getDescription().getAuthors());
+				p.sendMessage("§6Authors: §a" + getDescription().getAuthors());
 				p.sendMessage("§6Website: §a" + getDescription().getWebsite());
 				p.sendMessage("§6You will get more information with this command:");
 				p.sendMessage("§b/mcrealtime contact");
@@ -106,7 +105,7 @@ public class Main extends JavaPlugin implements CommandExecutor{
 				p.sendMessage("");
 				p.sendMessage("");
 				p.sendMessage("__________________________________________________");
-				p.sendMessage(Main.prefix);
+				p.sendMessage(prefix);
 				p.sendMessage("");
 				p.sendMessage("§6You have some problems or you want post a feedback ?");
 				p.sendMessage("§6No problem ! You could me send your feedback on the chat of:");
@@ -131,14 +130,14 @@ public class Main extends JavaPlugin implements CommandExecutor{
 				p.sendMessage("");
 				p.sendMessage("");
 				p.sendMessage("__________________________________________________");
-				p.sendMessage(Main.prefix);
-				p.sendMessage("§6Version: §a" + getDescription().getVersion());
+				p.sendMessage(prefix);
 				p.sendMessage("§6Made by §a" + getDescription().getAuthors());
 				p.sendMessage("§6Description of the plugin: §a" + getDescription().getDescription());
 				p.sendMessage("");
 				p.sendMessage("§6Changelogs:");
 				p.sendMessage("§2+ Added Versionsupport from 1.8 to 1.14.1");
 				p.sendMessage("§2+ MITLicense updated");
+				p.sendMessage("§2+ Chat messages updated");
 				p.sendMessage("__________________________________________________");
 				p.sendMessage("");
 				p.sendMessage("");
@@ -153,7 +152,7 @@ public class Main extends JavaPlugin implements CommandExecutor{
 			p.sendMessage("");
 			p.sendMessage("");
 			p.sendMessage("__________________________________________________");
-			p.sendMessage(Main.prefix);
+			p.sendMessage(prefix);
 			p.sendMessage("");
 			p.sendMessage("§cYou do not have permissions to perform this command !");
 			p.sendMessage("__________________________________________________");
