@@ -62,7 +62,7 @@ public class Main extends JavaPlugin implements CommandExecutor{
 				p.sendMessage("");
 				p.sendMessage("");
 				p.sendMessage("__________________________________________________");
-				p.sendMessage(Main.prefix);
+				p.sendMessage(Main.prefix + " §av" + getDescription().getVersion());
 				p.sendMessage("");
 				p.sendMessage("§6Here is a list with all avaible commands: ");
 				p.sendMessage("§c/mcrealtime info §r- §7You'll get important information to this plugin");
@@ -137,11 +137,8 @@ public class Main extends JavaPlugin implements CommandExecutor{
 				p.sendMessage("§6Description of the plugin: §a" + getDescription().getDescription());
 				p.sendMessage("");
 				p.sendMessage("§6Changelogs:");
-				p.sendMessage("§2+ Added command /mcrealtime changelog");
-				p.sendMessage("§2+ Added Versionsupport from 1.8 to 1.13.2");
-				p.sendMessage("§2+ Added new Chat-Design");
-				p.sendMessage("§c- Removed old Chat-Design");
-				p.sendMessage("§c- Removed speeling mistake");
+				p.sendMessage("§2+ Added Versionsupport from 1.8 to 1.14.1");
+				p.sendMessage("§2+ MITLicense updated");
 				p.sendMessage("__________________________________________________");
 				p.sendMessage("");
 				p.sendMessage("");
