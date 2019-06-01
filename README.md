@@ -14,7 +14,7 @@ Here are maybe important commands:
 
 "/mcrealtime info" - You will get news and status about this plugin.
 "/mcrealtime contact" - You will get information about my contact details, if you have a problem or if you will send a feedback for my plugin.
-"/mcrealtime changelog" - You will get information about the last update.
+ "/mcrealtime changelog" - You will get information about the last update.
  
 
 Permission: 
@@ -22,7 +22,6 @@ Permission:
 "/mcrealtime info" - mcrealtime.use
 "/mcrealtime contact" - mcrealtime.use
 "/mcrealtime changelog" - mcrealtime.use 
-
 IMPORTANT:
 
  
