@@ -2,7 +2,7 @@ Love community,
 
  
 
-I have once again brought out a plugin, which allows the real-time in Minecraft. That means, if e.g. 8pm, it's the same night in Minecraft, the other way around. This plugin works according to the CMOS system. The plugin gets the time information from the CMOS and transfers that live to Minecraft.
+I have once again brought out a plugin + Updater, which allows the real-time in Minecraft. That means, if e.g. 8pm, it's the same night in Minecraft, the other way around. This plugin works according to the CMOS system. The plugin gets the time information from the CMOS and transfers that live to Minecraft.
 
  
 
