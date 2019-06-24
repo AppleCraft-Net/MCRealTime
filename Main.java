@@ -135,9 +135,8 @@ public class Main extends JavaPlugin implements CommandExecutor{
 				p.sendMessage("§6Description of the plugin: §a" + getDescription().getDescription());
 				p.sendMessage("");
 				p.sendMessage("§6Changelogs:");
-				p.sendMessage("§2+ Added Versionsupport from 1.8 to 1.14.2");
-				p.sendMessage("§2+ MITLicense updated");
-				p.sendMessage("§2+ Chat messages updated");
+				p.sendMessage("§2+ Added Versionsupport from 1.8 to 1.14.3");
+				p.sendMessage("§2+ Icon updated");
 				p.sendMessage("__________________________________________________");
 				p.sendMessage("");
 				p.sendMessage("");
