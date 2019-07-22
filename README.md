@@ -30,7 +30,7 @@ It only works on JRE/JDK 8
 
  
 
-IT SUPPORTS THE VERSIONS 1.8 - 1.14.3 ! 
+IT SUPPORTS THE VERSIONS 1.8 - 1.14.4 ! 
 
  
 
