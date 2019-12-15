@@ -137,6 +137,7 @@ public class Main extends JavaPlugin implements CommandExecutor{
 				p.sendMessage("");
 				p.sendMessage("§6Changelogs:");
 				p.sendMessage("§2+ Added Versionsupport from 1.8 to 1.15");
+				p.sendMessage("§2+ Added EventListener PlayerBedEnterEvent (is cancelling)");
 				p.sendMessage("__________________________________________________");
 				p.sendMessage("");
 				p.sendMessage("");
