@@ -1,4 +1,4 @@
-Love community,
+Dear community,
 
  
 
@@ -30,7 +30,7 @@ It only works on JRE/JDK 8
 
  
 
-IT SUPPORTS THE VERSIONS 1.8 - 1.14.4 ! 
+IT SUPPORTS THE VERSIONS 1.8 - 1.15 !
 
  
 
@@ -52,10 +52,10 @@ Dear Greeting CrashKillerYT
 
  
 
-©Copyright 2019 AppleCraft Company
+©Copyright 2020 AppleCraft Network
 
-©Copyright 2019 MCRealTime Plugin
+©Copyright 2020 MCRealTime Plugin
 
-©Main Copyright 2019 CrashKillerYT
+©Main Copyright 2020 CrashKillerYT
 
-©Main Copyright 2019 Gabriel Jan Lukas M.
+©Main Copyright 2020 (dipl.) Gabriel Jan (Lukas) M.
