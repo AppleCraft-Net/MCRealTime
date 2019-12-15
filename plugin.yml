@@ -1,9 +1,9 @@
 name: MCRealTime
-version: 2.8
+version: 2.9
 main: net.viewdns.applecraft.Main
 author: CrashKillerYT
-authors: [AppleCraft.ViewDNS.NET Team]
-website: http://applecraft.viewdns.net
+authors: [(dipl.) Gabriel Jan (Lukas) M., AppleCraft Network, CrashKillerYT, MCRealTime Plugin]
+website: http://gabriel-malaka.ga
 description: This Plugin put the real time live in the minecraft time.
 
 commands: 
