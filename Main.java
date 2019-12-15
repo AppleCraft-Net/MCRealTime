@@ -16,7 +16,7 @@ import net.gravitydevelopment.updater.Updater;
 
 public class Main extends JavaPlugin implements CommandExecutor{
 	
-	public String prefix = "§a♦ MCRealTime" + " §2v" + getDescription().getVersion() + " §2♦";
+	public String prefix = "§a♦ MCRealTime" + " §2v" + getDescription().getVersion() + " §a♦";
 	
 	@SuppressWarnings("unused")
 	@Override
@@ -24,6 +24,7 @@ public class Main extends JavaPlugin implements CommandExecutor{
 		System.out.println("§2TimeServer started !");
 		Updater updater = new Updater(this, 286270, getFile(), Updater.UpdateType.DEFAULT, true);
 		getCommand("mcrealtime").setExecutor(this);
+		Bukkit.getPluginManager().registerEvents(new NoEnterBedEvent(), this);
 		
 		new BukkitRunnable() {
 			
@@ -135,7 +136,7 @@ public class Main extends JavaPlugin implements CommandExecutor{
 				p.sendMessage("§6Description of the plugin: §a" + getDescription().getDescription());
 				p.sendMessage("");
 				p.sendMessage("§6Changelogs:");
-				p.sendMessage("§2+ Added Versionsupport from 1.8 to 1.14.4");
+				p.sendMessage("§2+ Added Versionsupport from 1.8 to 1.15");
 				p.sendMessage("__________________________________________________");
 				p.sendMessage("");
 				p.sendMessage("");
