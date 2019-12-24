@@ -1,8 +1,10 @@
+ 
+
 Dear community,
 
  
 
-I have once again brought out a plugin, which allows the real-time in Minecraft. That means, if e.g. 8pm, it's the same night in Minecraft, the other way around. This plugin works according to the CMOS system. The plugin gets the time information from the CMOS and transfers that live to Minecraft.
+I have once again brought out a plugin + Updater, which allows the real-time in Minecraft. That means, if e.g. 8pm, it's the same night in Minecraft, the other way around. This plugin works according to the CMOS system. The plugin gets the time information from the CMOS and transfers that live to Minecraft.
 
  
 
@@ -12,16 +14,18 @@ Here are maybe important commands:
 
  
 
-"/mcrealtime info" - You will get news and status about this plugin.
-"/mcrealtime contact" - You will get information about my contact details, if you have a problem or if you will send a feedback for my plugin.
- "/mcrealtime changelog" - You will get information about the last update.
+    "/mcrealtime info" - You will get news and status about this plugin.
+    "/mcrealtime contact" - You will get information about my contact details, if you have a problem or if you will send a feedback for my plugin.
+     "/mcrealtime changelog" - You will get information about the last update.
+
  
 
 Permission: 
 
-"/mcrealtime info" - mcrealtime.use
-"/mcrealtime contact" - mcrealtime.use
-"/mcrealtime changelog" - mcrealtime.use 
+    "/mcrealtime info" - mcrealtime.use
+    "/mcrealtime contact" - mcrealtime.use
+    "/mcrealtime changelog" - mcrealtime.use 
+
 IMPORTANT:
 
  
@@ -30,11 +34,11 @@ It only works on JRE/JDK 8
 
  
 
-IT SUPPORTS THE VERSIONS 1.8 - 1.15 !
+IT SUPPORTS THE VERSIONS 1.8 - 1.15 (Spigot: 1.15.1) ! 
 
  
 
-The only one complication is, that you can not execute the /time set <time> command and you can't sleep at night in minecraft !
+The only one complication is, that you can not execute the /time set  command and you can't sleep at night and in newer versions you can sleep, but without changes of time in minecraft !
 
  
 
@@ -59,3 +63,5 @@ Dear Greeting CrashKillerYT
 ©Main Copyright 2020 CrashKillerYT
 
 ©Main Copyright 2020 (dipl.) Gabriel Jan (Lukas) M.
+
+ 
