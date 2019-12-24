@@ -136,8 +136,8 @@ public class Main extends JavaPlugin implements CommandExecutor{
 				p.sendMessage("§6Description of the plugin: §a" + getDescription().getDescription());
 				p.sendMessage("");
 				p.sendMessage("§6Changelogs:");
-				p.sendMessage("§2+ Added Versionsupport from 1.8 to 1.15");
-				p.sendMessage("§2+ Added EventListener PlayerBedEnterEvent (is cancelling)");
+				p.sendMessage("§2+ Added Versionsupport from 1.8 to 1.15 (Spigot: 1.15.1)");
+				p.sendMessage("§2+ Added EventListener PlayerBedEnterEvent (is preveting to sleep)");
 				p.sendMessage("__________________________________________________");
 				p.sendMessage("");
 				p.sendMessage("");
