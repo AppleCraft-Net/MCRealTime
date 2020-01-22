@@ -17,7 +17,7 @@ Here are maybe important commands:
     "/mcrealtime info" - You will get news and status about this plugin.
     "/mcrealtime contact" - You will get information about my contact details, if you have a problem or if you will send a feedback for my plugin.
     "/mcrealtime changelog" - You will get information about the last update.
-    "/mcrealtime uninstall" - You will get a manuel, how to prepare an uninstall of the plugin. IMPORTANT !.
+    "/mcrealtime uninstall" - You will get a manual, how to prepare an uninstall of the plugin. IMPORTANT !.
 
  
 
