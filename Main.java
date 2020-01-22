@@ -69,6 +69,7 @@ public class Main extends JavaPlugin implements CommandExecutor{
 				p.sendMessage("§c/mcrealtime info §r- §7You'll get important information to this plugin");
 				p.sendMessage("§c/mcrealtime contact §r- §7You'll get my contact information");
 				p.sendMessage("§c/mcrealtime changelog §r- §7You'll get all changes about the last update");
+				p.sendMessage("§c/mcrealtime uninstall §r- §7Prepare MCRealTime for uninstallation");
 				p.sendMessage("__________________________________________________");
 				p.sendMessage("");
 				p.sendMessage("");
@@ -124,6 +125,28 @@ public class Main extends JavaPlugin implements CommandExecutor{
 				p.sendMessage("");
 				p.sendMessage("");
 				p.sendMessage("");
+			}else if(args[0].equalsIgnoreCase("uninstall")) {
+				p.sendMessage("");
+				p.sendMessage("");
+				p.sendMessage("");
+				p.sendMessage("");
+				p.sendMessage("");
+				p.sendMessage("__________________________________________________");
+				p.sendMessage(prefix);
+				p.sendMessage("§6Made by §a" + getDescription().getAuthors());
+				p.sendMessage("§6Description of the plugin: §a" + getDescription().getDescription());
+				p.sendMessage("");
+				p.sendMessage("§6Uninstall:");
+				p.sendMessage("§cRemove MCRealTime from the plugins folder of your server.");
+				p.sendMessage("§cWARNING ! Set the gamerule doDaylightcycle to true ! That will enable the orginal day-night rythm of minecraft again.");
+				p.sendMessage("");
+				p.sendMessage("§6Thank you for download and please give us a feedback at https://dev.bukkit.org/projects/mcrealtime for permitting us to get better.");
+				p.sendMessage("__________________________________________________");
+				p.sendMessage("");
+				p.sendMessage("");
+				p.sendMessage("");
+				p.sendMessage("");
+				p.sendMessage("");
 			}else if(args[0].equalsIgnoreCase("changelog")) {
 				p.sendMessage("");
 				p.sendMessage("");
@@ -136,8 +159,10 @@ public class Main extends JavaPlugin implements CommandExecutor{
 				p.sendMessage("§6Description of the plugin: §a" + getDescription().getDescription());
 				p.sendMessage("");
 				p.sendMessage("§6Changelogs:");
-				p.sendMessage("§2+ Added Versionsupport from 1.8 to 1.15 (Spigot: 1.15.1)");
-				p.sendMessage("§2+ Added EventListener PlayerBedEnterEvent (is preveting to sleep)");
+				p.sendMessage("§2+ Added Bukkit version support from 1.8 to 1.15");
+				p.sendMessage("§2+ Added CraftBukkit version support from 1.8 to 1.15");
+				p.sendMessage("§2+ Added Spigot version support from 1.8 to 1.15.2");
+				p.sendMessage("§2+ Added Command /mcrealtime uninstall");
 				p.sendMessage("__________________________________________________");
 				p.sendMessage("");
 				p.sendMessage("");
