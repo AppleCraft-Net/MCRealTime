@@ -41,6 +41,10 @@ public class Main extends JavaPlugin implements CommandExecutor{
 	@Override
 	public void onDisable() {
 		System.out.println("§cTimeServer stopped !");
+		
+		for(World w : Bukkit.getWorlds()) {
+			w.setGameRuleValue("doDaylightCycle", "true");
+		}
 	}
 	
 	private static Integer getTime() {
@@ -114,7 +118,7 @@ public class Main extends JavaPlugin implements CommandExecutor{
 				p.sendMessage("§6https://dev.bukkit.org/projects/mcrealtime");
 				p.sendMessage("");
 				p.sendMessage("§6If you have some problems, you can contact me under:");
-				p.sendMessage("§6E-Mail: §acrashkillerlps.de@gmail.com");
+				p.sendMessage("§6E-Mail: §acrashkilleryt@freenet.de");
 				p.sendMessage("§bSometimes on my teamspeak 3: §aapplecraft.viewdns.net");
 				p.sendMessage("§3Telegram: §aCrashKillerYT");
 				p.sendMessage("§6Thanks for understanding !");
@@ -137,8 +141,9 @@ public class Main extends JavaPlugin implements CommandExecutor{
 				p.sendMessage("§6Description of the plugin: §a" + getDescription().getDescription());
 				p.sendMessage("");
 				p.sendMessage("§6Uninstall:");
-				p.sendMessage("§cRemove MCRealTime from the plugins folder of your server.");
-				p.sendMessage("§cWARNING ! Set the gamerule doDaylightcycle to true ! That will enable the orginal day-night rythm of minecraft again.");
+				p.sendMessage("§c1. Shutdown the network.");
+				p.sendMessage("§c2. Remove MCRealTime from the plugins folder of your server.");
+				p.sendMessage("§c3. That's it ! The gamerule DoDayLightCycle is set on true again !");
 				p.sendMessage("");
 				p.sendMessage("§6Thank you for download and please give us a feedback at https://dev.bukkit.org/projects/mcrealtime for permitting us to get better.");
 				p.sendMessage("__________________________________________________");
@@ -159,10 +164,7 @@ public class Main extends JavaPlugin implements CommandExecutor{
 				p.sendMessage("§6Description of the plugin: §a" + getDescription().getDescription());
 				p.sendMessage("");
 				p.sendMessage("§6Changelogs:");
-				p.sendMessage("§2+ Added Bukkit version support from 1.8 to 1.15");
-				p.sendMessage("§2+ Added CraftBukkit version support from 1.8 to 1.15");
-				p.sendMessage("§2+ Added Spigot version support from 1.8 to 1.15.2");
-				p.sendMessage("§2+ Added Command /mcrealtime uninstall");
+				p.sendMessage("§2+ Added Settings-Reset after uninstall.");
 				p.sendMessage("__________________________________________________");
 				p.sendMessage("");
 				p.sendMessage("");
