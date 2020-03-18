@@ -1,9 +1,9 @@
 name: MCRealTime
-version: 3.1
+version: 3.2
 main: net.viewdns.applecraft.Main
 author: Gabriel Malaka
 authors: [Gabriel Malaka, AppleCraft Network, CrashKillerYT, MCRealTime Plugin]
-website: http://gabriel-malaka.ga
+website: https://gabriel-malaka.ga
 description: This Plugin put the real time live in the minecraft time.
 
 commands: 
