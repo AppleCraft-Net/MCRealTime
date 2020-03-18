@@ -1,4 +1,4 @@
-package net.viewdns.applecraft;
+package net.viewdns.applecraft;-
 
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
