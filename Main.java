@@ -26,16 +26,38 @@ public class Main extends JavaPlugin implements CommandExecutor{
 		getCommand("mcrealtime").setExecutor(this);
 		Bukkit.getPluginManager().registerEvents(new NoEnterBedEvent(), this);
 		
+		this.saveDefaultConfig();
+		this.getConfig().options().copyDefaults(true);
+		
+		
+		if(getConfig().getBoolean("enable", true)) {
+			
+		if(getConfig().getBoolean("global", true)) {
 		new BukkitRunnable() {
 			
 			@Override
 			public void run() {
-				for(World w : Bukkit.getWorlds()) {
-					w.setTime(getTime());
-					w.setGameRuleValue("doDaylightCycle", "false");
+				for(World global : Bukkit.getWorlds()) {
+					global.setTime(getTime());
+					global.setGameRuleValue("doDaylightCycle", "false");
 				}
 			}
 		}.runTaskTimer(this, 0, 1);
+		
+		} else {
+			
+			new BukkitRunnable() {
+				
+				@Override
+				public void run() {
+						World name = Bukkit.getWorld(getConfig().getString("world"));
+						
+						name.setTime(getTime());
+						name.setGameRuleValue("doDaylightCycle", "false");
+				}
+			}.runTaskTimer(this, 0, 1);
+		}
+		}
 	}
 	
 	@Override
