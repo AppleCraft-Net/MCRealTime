@@ -1,4 +1,4 @@
-# Security Policy-
+# Security Policy
 
 ## Supported Versions
 
@@ -11,4 +11,4 @@
 
 ## Reporting a Vulnerability
 
-e-mail: gabriel.malaka@paulus-ol.de
+e-mail: gabriel.malaka@freenet.de
