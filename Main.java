@@ -120,6 +120,8 @@ public class Main extends JavaPlugin implements CommandExecutor{
 				p.sendMessage("§bIt means, that you have all rights reserved !");
 				p.sendMessage("§bYou have all rights reserved, except of the MIT License !");
 				p.sendMessage("§6I wish you much fun with that. Yours Faithfuly CrashKillerYT ! :)");
+				p.sendMessage("");
+				p.sendMessage("§bPS: Take a look in the config file for more settings.");
 				p.sendMessage("__________________________________________________");
 				p.sendMessage("");
 				p.sendMessage("");
@@ -186,7 +188,8 @@ public class Main extends JavaPlugin implements CommandExecutor{
 				p.sendMessage("§6Description of the plugin: §a" + getDescription().getDescription());
 				p.sendMessage("");
 				p.sendMessage("§6Changelogs:");
-				p.sendMessage("§2+ Added Settings-Reset after uninstall.");
+				p.sendMessage("§2+ Added config.yml file.");
+				p.sendMessage("§2+ Added /deactivate command.");
 				p.sendMessage("__________________________________________________");
 				p.sendMessage("");
 				p.sendMessage("");
