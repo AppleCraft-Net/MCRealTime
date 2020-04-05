@@ -10,6 +10,12 @@ I have once again brought out a plugin + Updater, which allows the real-time in 
 
 You do not have to do much to get the plugin working. Just put the plugin in the normal plugins folder. This also applies to the users who use BungeeCord!
 
+ 
+
+ 
+
+You can activate and deactivate the plugin in the config.yml file by setting the value "enable" to true or false accordingly. You can also set the effect of the plugin globally or set it to a specific world by setting the variable "global" to false and entering the respective world name in "world".
+
 Here are maybe important commands:
 
  
