@@ -189,7 +189,6 @@ public class Main extends JavaPlugin implements CommandExecutor{
 				p.sendMessage("");
 				p.sendMessage("§6Changelogs:");
 				p.sendMessage("§2+ Added config.yml file.");
-				p.sendMessage("§2+ Added /deactivate command.");
 				p.sendMessage("__________________________________________________");
 				p.sendMessage("");
 				p.sendMessage("");
