@@ -2,6 +2,7 @@ package net.viewdns.applecraft;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 import org.bukkit.Bukkit;
 import org.bukkit.World;
@@ -12,22 +13,22 @@ import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitRunnable;
 
-import net.gravitydevelopment.updater.Updater;
+//import net.gravitydevelopment.updater.Updater;
 
 public class Main extends JavaPlugin implements CommandExecutor{
 	
 	public String prefix = "§a♦ MCRealTime" + " §2v" + getDescription().getVersion() + " §a♦";
 	
-	@SuppressWarnings("unused")
+//	@SuppressWarnings("unused")
 	@Override
 	public void onEnable() {
 		System.out.println("§2TimeServer started !");
-		Updater updater = new Updater(this, 286270, getFile(), Updater.UpdateType.DEFAULT, true);
+		//Updater updater = new Updater(this, 286270, getFile(), Updater.UpdateType.DEFAULT, true);
 		getCommand("mcrealtime").setExecutor(this);
 		Bukkit.getPluginManager().registerEvents(new NoEnterBedEvent(), this);
 		
-		this.saveDefaultConfig();
-		this.getConfig().options().copyDefaults(true);
+		saveDefaultConfig();
+		getConfig().options().copyDefaults(true);
 		
 		
 		if(getConfig().getBoolean("enable", true)) {
@@ -50,10 +51,13 @@ public class Main extends JavaPlugin implements CommandExecutor{
 				
 				@Override
 				public void run() {
-						World name = Bukkit.getWorld(getConfig().getString("world"));
-						
-						name.setTime(getTime());
-						name.setGameRuleValue("doDaylightCycle", "false");
+					
+					List<String> arrayworlds = getConfig().getStringList("worlds");
+					
+					for(String name : arrayworlds) {
+						Bukkit.getWorld(name).setTime(getTime());
+						Bukkit.getWorld(name).setGameRuleValue("doDaylightCycle", "false");
+					}
 				}
 			}.runTaskTimer(this, 0, 1);
 		}
@@ -188,7 +192,7 @@ public class Main extends JavaPlugin implements CommandExecutor{
 				p.sendMessage("§6Description of the plugin: §a" + getDescription().getDescription());
 				p.sendMessage("");
 				p.sendMessage("§6Changelogs:");
-				p.sendMessage("§2+ Added config.yml file.");
+				p.sendMessage("§2+ Extended config.yml file with multi world names option");
 				p.sendMessage("__________________________________________________");
 				p.sendMessage("");
 				p.sendMessage("");
