@@ -14,7 +14,7 @@ You do not have to do much to get the plugin working. Just put the plugin in the
 
  
 
-You can activate and deactivate the plugin in the config.yml file by setting the value "enable" to true or false accordingly. You can also set the effect of the plugin globally or set it to a specific world by setting the variable "global" to false and entering the respective world name in "world".
+You can activate and deactivate the plugin in the config.yml file by setting the value "enable" to true or false accordingly. You can also set the effect of the plugin globally or set it to a specific world by setting the variable "global" to false and adding the multi world names in "worlds".
 
 Here are maybe important commands:
 
@@ -42,7 +42,7 @@ It only works on JRE/JDK 8
 
  
 
-IT SUPPORTS THE VERSIONS 1.8 - 1.15.2 ! 
+IT SUPPORTS THE VERSIONS 1.8 - 1.16.1 ! 
 
  
 
