@@ -1,14 +1,19 @@
 # If the value "global" is set to true, the entries in "worlds" do not apply.
 # If you only want to use real-time for certain worlds,
-# set "global" to false and complete the variable at "world" with the world name.
+# set "global" to false and complete the string list at "worlds" with the world names.
 # 
 # ATTENTION ! Pay attention to the formal criteria so that mistakes do not occur.
 # 
 # 
 # PS: If you want to reload the standard configuration, simply delete the config.yml file and reload the server.
 # A new config.yml file is created with the standard settings.
-
+#
+#
 enable: true
 
 global: true
-world: '<world name>'
+worlds: 
+   - world1
+   - world2
+   - world3
+   - ...
