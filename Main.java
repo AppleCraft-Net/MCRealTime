@@ -13,17 +13,17 @@ import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitRunnable;
 
-//import net.gravitydevelopment.updater.Updater;
+import net.gravitydevelopment.updater.Updater;
 
 public class Main extends JavaPlugin implements CommandExecutor{
 	
 	public String prefix = "§a♦ MCRealTime" + " §2v" + getDescription().getVersion() + " §a♦";
 	
-//	@SuppressWarnings("unused")
+	@SuppressWarnings("unused")
 	@Override
 	public void onEnable() {
 		System.out.println("§2TimeServer started !");
-		//Updater updater = new Updater(this, 286270, getFile(), Updater.UpdateType.DEFAULT, true);
+		Updater updater = new Updater(this, 286270, getFile(), Updater.UpdateType.DEFAULT, true);
 		getCommand("mcrealtime").setExecutor(this);
 		Bukkit.getPluginManager().registerEvents(new NoEnterBedEvent(), this);
 		
