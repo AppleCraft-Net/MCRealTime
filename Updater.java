@@ -1,4 +1,4 @@
-package net.gravitydevelopment.updater;
+p.ackage net.gravitydevelopment.updater;
 
 import java.io.*;
 import java.net.HttpURLConnection;
