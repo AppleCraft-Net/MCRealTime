@@ -1,4 +1,4 @@
-.# If the value "global" is set to true, the entries in "worlds" do not apply.
+# If the value "global" is set to true, the entries in "worlds" do not apply.
 # If you only want to use real-time for certain worlds,
 # set "global" to false and complete the string list at "worlds" with the world names.
 # 
