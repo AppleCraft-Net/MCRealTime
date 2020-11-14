@@ -192,7 +192,7 @@ public class Main extends JavaPlugin implements CommandExecutor{
 				p.sendMessage("§6Description of the plugin: §a" + getDescription().getDescription());
 				p.sendMessage("");
 				p.sendMessage("§6Changelogs:");
-				p.sendMessage("§2+ Extended config.yml file with multi world names option");
+				p.sendMessage("§2+ Added version support from 1.8 to 1.16.4");
 				p.sendMessage("__________________________________________________");
 				p.sendMessage("");
 				p.sendMessage("");
