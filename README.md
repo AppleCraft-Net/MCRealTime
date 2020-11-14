@@ -42,7 +42,7 @@ It only works on JRE/JDK 8
 
  
 
-IT SUPPORTS THE VERSIONS 1.8 - 1.16.1 ! 
+IT SUPPORTS THE VERSIONS 1.8 - 1.16.4 ! 
 
  
 
@@ -64,12 +64,12 @@ Dear Greeting CrashKillerYT
 
  
 
-©Copyright 2020 AppleCraft Network
+©Copyright 2020/2021 AppleCraft Network
 
-©Copyright 2020 MCRealTime Plugin
+©Copyright 2020/2021 MCRealTime Plugin
 
-©Main Copyright 2020 CrashKillerYT
+©Main Copyright 2020/2021 CrashKillerYT
 
-©Main Copyright 2020 Gabriel M.
+©Main Copyright 2020/2021 Gabriel M.
 
  
