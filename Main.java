@@ -193,30 +193,31 @@ public class Main extends JavaPlugin implements CommandExecutor{
 				p.sendMessage("");
 				p.sendMessage("§6Changelogs:");
 				p.sendMessage("§2+ Added version support from 1.8 to 1.16.4");
+				p.sendMessage("§2+ Fixed Errors");
 				p.sendMessage("__________________________________________________");
 				p.sendMessage("");
 				p.sendMessage("");
 				p.sendMessage("");
 				p.sendMessage("");
 				p.sendMessage("");
-			}
-		}else {
-			p.sendMessage("");
-			p.sendMessage("");
-			p.sendMessage("");
-			p.sendMessage("");
-			p.sendMessage("");
-			p.sendMessage("__________________________________________________");
-			p.sendMessage(prefix);
-			p.sendMessage("");
-			p.sendMessage("§cYou do not have permissions to perform this command !");
-			p.sendMessage("__________________________________________________");
-			p.sendMessage("");
-			p.sendMessage("");
-			p.sendMessage("");
-			p.sendMessage("");
-			p.sendMessage("");
 		}
+} else {
+	p.sendMessage("");
+	p.sendMessage("");
+	p.sendMessage("");
+	p.sendMessage("");
+	p.sendMessage("");
+	p.sendMessage("__________________________________________________");
+	p.sendMessage(prefix);
+	p.sendMessage("");
+	p.sendMessage("§cYou do not have permissions to perform this command !");
+	p.sendMessage("__________________________________________________");
+	p.sendMessage("");
+	p.sendMessage("");
+	p.sendMessage("");
+	p.sendMessage("");
+	p.sendMessage("");
+}
 		return true;
 	}
 }
