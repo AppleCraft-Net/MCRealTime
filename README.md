@@ -38,7 +38,7 @@ IMPORTANT:
 
  
 
-It works on JRE 8 - 14
+It works on JRE 8.
 
  
 
