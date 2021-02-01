@@ -10,7 +10,6 @@ public class NoEnterBedEvent implements Listener {
 	
 	@EventHandler(priority=EventPriority.HIGHEST)
 	public void onEnterBed(PlayerBedEnterEvent e) {
-		
 			Player p = e.getPlayer();
 			e.setCancelled(true);
 			p.sendMessage("");
@@ -19,7 +18,7 @@ public class NoEnterBedEvent implements Listener {
 			p.sendMessage("");
 			p.sendMessage("");
 			p.sendMessage("__________________________________________________");
-			p.sendMessage("§a♦ MCRealTime §2♦");
+			p.sendMessage("§a♦ MCRealTime ♦");
 			p.sendMessage("");
 			p.sendMessage("§cYou can't sleep while real time simulation. Comming maybe soon !");
 			p.sendMessage("__________________________________________________");
@@ -31,3 +30,4 @@ public class NoEnterBedEvent implements Listener {
 	}
 
 }
+.
