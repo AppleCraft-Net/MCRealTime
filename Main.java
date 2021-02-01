@@ -17,11 +17,11 @@ public class Main extends JavaPlugin implements CommandExecutor{
 	
 	public String prefix = "§a♦ MCRealTime" + " §2v" + getDescription().getVersion() + " §a♦";
 	
-	//@SuppressWarnings("unused")
+	@SuppressWarnings("unused")
 	@Override
 	public void onEnable() {
 		System.out.println("§2TimeServer started !");
-		//Updater updater = new Updater(this, 286270, getFile(), Updater.UpdateType.DEFAULT, true);
+		Updater updater = new Updater(this, 286270, getFile(), Updater.UpdateType.DEFAULT, true);
 		getCommand("mcrealtime").setExecutor(this);
 		getCommand("mcrealtime").setTabCompleter(new ConstructTabCompleter());
 		Bukkit.getPluginManager().registerEvents(new NoEnterBedEvent(), this);
