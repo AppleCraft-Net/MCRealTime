@@ -30,4 +30,3 @@ public class NoEnterBedEvent implements Listener {
 	}
 
 }
-.
