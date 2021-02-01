@@ -33,6 +33,7 @@ Permission:
     "/mcrealtime contact" - mcrealtime.use
     "/mcrealtime changelog" - mcrealtime.use 
     "/mcrealtime uninstall" - mcrealtime.use
+    Command tab completion - mcrealtime.use
 
 IMPORTANT:
 
@@ -42,7 +43,7 @@ It works on JRE 8.
 
  
 
-IT SUPPORTS THE VERSIONS 1.8 - 1.16.4 ! 
+IT SUPPORTS THE VERSIONS (Bukkit/Craftbukkit/Spigot) 1.8 - 1.16.5 ! 
 
  
 
@@ -56,20 +57,18 @@ That's it, now you can fully enjoy the plugin.
 
 I wish you a lot of fun with my plugin!
 
-Here is the source code: https://github.com/CrashKillerYT/MCRealTime
+Here is the source code: https://github.com/GabrielJanLukasM/MCRealTime
 
  
 
-Dear Greeting CrashKillerYT
+Dear Greetings,
+
+Dev_Gabriel_M
 
  
 
-©Copyright 2020/2021 AppleCraft Network
+©2018-2021 Dev_Gabriel_M
 
-©Copyright 2020/2021 MCRealTime Plugin
-
-©Main Copyright 2020/2021 CrashKillerYT
-
-©Main Copyright 2020/2021 Gabriel M.
+©2018-2021 Gabriel Malaka
 
  
