@@ -13,18 +13,17 @@ import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitRunnable;
 
-import net.gravitydevelopment.updater.Updater;
-
 public class Main extends JavaPlugin implements CommandExecutor{
 	
 	public String prefix = "§a♦ MCRealTime" + " §2v" + getDescription().getVersion() + " §a♦";
 	
-	@SuppressWarnings("unused")
+	//@SuppressWarnings("unused")
 	@Override
 	public void onEnable() {
 		System.out.println("§2TimeServer started !");
-		Updater updater = new Updater(this, 286270, getFile(), Updater.UpdateType.DEFAULT, true);
+		//Updater updater = new Updater(this, 286270, getFile(), Updater.UpdateType.DEFAULT, true);
 		getCommand("mcrealtime").setExecutor(this);
+		getCommand("mcrealtime").setTabCompleter(new ConstructTabCompleter());
 		Bukkit.getPluginManager().registerEvents(new NoEnterBedEvent(), this);
 		
 		saveDefaultConfig();
@@ -122,8 +121,8 @@ public class Main extends JavaPlugin implements CommandExecutor{
 				p.sendMessage("§cYou can not type this command: /time set <time> !");
 				p.sendMessage("§bThis plugin is an OpenSource project !");
 				p.sendMessage("§bIt means, that you have all rights reserved !");
-				p.sendMessage("§bYou have all rights reserved, except of the MIT License !");
-				p.sendMessage("§6I wish you much fun with that. Yours Faithfuly CrashKillerYT ! :)");
+				p.sendMessage("§bYou have all rights reserved in case of the MIT License !");
+				p.sendMessage("§6I wish you much fun with that. Yours Faithfuly Dev_Gabriel_M ! :)");
 				p.sendMessage("");
 				p.sendMessage("§bPS: Take a look in the config file for more settings.");
 				p.sendMessage("__________________________________________________");
@@ -142,13 +141,12 @@ public class Main extends JavaPlugin implements CommandExecutor{
 				p.sendMessage(prefix);
 				p.sendMessage("");
 				p.sendMessage("§6You have some problems or you want post a feedback ?");
-				p.sendMessage("§6No problem ! You could me send your feedback on the chat of:");
-				p.sendMessage("§6https://dev.bukkit.org/projects/mcrealtime");
+				p.sendMessage("§6No problem ! You could me send your feedback on the issue site of:");
+				p.sendMessage("§6https://dev.bukkit.org/projects/mcrealtime/issues");
 				p.sendMessage("");
 				p.sendMessage("§6If you have some problems, you can contact me under:");
-				p.sendMessage("§6E-Mail: §acrashkilleryt@freenet.de");
-				p.sendMessage("§bSometimes on my teamspeak 3: §aapplecraft.viewdns.net");
-				p.sendMessage("§3Telegram: §aCrashKillerYT");
+				p.sendMessage("§6E-Mail: §agabriel.malaka@freenet.de");
+				p.sendMessage("§bSometimes on my teamspeak 3: §ats.gabriel-malaka.ga");
 				p.sendMessage("§6Thanks for understanding !");
 				p.sendMessage("§6See ya around :)");
 				p.sendMessage("__________________________________________________");
@@ -169,11 +167,11 @@ public class Main extends JavaPlugin implements CommandExecutor{
 				p.sendMessage("§6Description of the plugin: §a" + getDescription().getDescription());
 				p.sendMessage("");
 				p.sendMessage("§6Uninstall:");
-				p.sendMessage("§c1. Shutdown the network.");
+				p.sendMessage("§c1. Shutdown the local server.");
 				p.sendMessage("§c2. Remove MCRealTime from the plugins folder of your server.");
-				p.sendMessage("§c3. That's it ! The gamerule DoDayLightCycle is set on true again !");
+				p.sendMessage("§c3. That's it ! The gamerule DoDayLightCycle is automatically set on true again !");
 				p.sendMessage("");
-				p.sendMessage("§6Thank you for download and please give us a feedback at https://dev.bukkit.org/projects/mcrealtime for permitting us to get better.");
+				p.sendMessage("§6Thank you for download and please give me your opportunity as feedback at https://dev.bukkit.org/projects/mcrealtime for permitting me to get better.");
 				p.sendMessage("__________________________________________________");
 				p.sendMessage("");
 				p.sendMessage("");
@@ -192,8 +190,8 @@ public class Main extends JavaPlugin implements CommandExecutor{
 				p.sendMessage("§6Description of the plugin: §a" + getDescription().getDescription());
 				p.sendMessage("");
 				p.sendMessage("§6Changelogs:");
-				p.sendMessage("§2+ Added version support from 1.8 to 1.16.4");
-				p.sendMessage("§2+ Fixed Errors");
+				p.sendMessage("§2+ Added (Craftbukkit/Bukkit/Spigot) version support from 1.8 to 1.16.5");
+				p.sendMessage("§2+ Added command tab completer");
 				p.sendMessage("__________________________________________________");
 				p.sendMessage("");
 				p.sendMessage("");
