@@ -1,4 +1,4 @@
-package net.gravitydevelopment.updater;
+package net.viewdns.applecraft;
 
 import java.io.*;
 import java.net.HttpURLConnection;
