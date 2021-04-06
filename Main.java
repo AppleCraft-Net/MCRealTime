@@ -3,6 +3,7 @@ package net.viewdns.applecraft;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+import java.util.TimeZone;
 
 import org.bukkit.Bukkit;
 import org.bukkit.World;
@@ -17,6 +18,8 @@ public class Main extends JavaPlugin implements CommandExecutor{
 	
 	public String prefix = "§a♦ MCRealTime" + " §2v" + getDescription().getVersion() + " §a♦";
 	
+	public static String timezoneconfig;
+	
 	@SuppressWarnings("unused")
 	@Override
 	public void onEnable() {
@@ -29,6 +32,7 @@ public class Main extends JavaPlugin implements CommandExecutor{
 		saveDefaultConfig();
 		getConfig().options().copyDefaults(true);
 		
+		timezoneconfig = getConfig().getString("timezone");
 		
 		if(getConfig().getBoolean("enable", true)) {
 			
@@ -74,6 +78,8 @@ public class Main extends JavaPlugin implements CommandExecutor{
 	
 	private static Integer getTime() {
 		SimpleDateFormat time = new SimpleDateFormat("HH:mm");
+		TimeZone tz = TimeZone.getTimeZone(timezoneconfig);
+		time.setTimeZone(tz);
 		String[] args = time.format(new Date()).split(":");
 		Integer hours = Integer.parseInt(args[0])*1000;
 		Integer minutes = Integer.parseInt(args[1])*(100/60);
@@ -190,15 +196,14 @@ public class Main extends JavaPlugin implements CommandExecutor{
 				p.sendMessage("§6Description of the plugin: §a" + getDescription().getDescription());
 				p.sendMessage("");
 				p.sendMessage("§6Changelogs:");
-				p.sendMessage("§2+ Added (Craftbukkit/Bukkit/Spigot) version support from 1.8 to 1.16.5");
-				p.sendMessage("§2+ Added command tab completer");
+				p.sendMessage("§2+ Added time zone settings in config.yml");
 				p.sendMessage("__________________________________________________");
 				p.sendMessage("");
 				p.sendMessage("");
 				p.sendMessage("");
 				p.sendMessage("");
 				p.sendMessage("");
-		}
+			}
 } else {
 	p.sendMessage("");
 	p.sendMessage("");
