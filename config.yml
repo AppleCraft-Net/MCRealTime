@@ -8,8 +8,14 @@
 # PS: If you want to reload the standard configuration, simply delete the config.yml file and reload the server.
 # A new config.yml file is created with the standard settings.
 #
-#
+# Please reload or restart your server on every config save after changing.
+# 
 enable: true
+
+# Put your time zone in short format here ()E.g. UTC, CEST, PST...).
+# You can use of course formats like GMT+2, GMT-8 etc.
+
+timezone: "UTC"
 
 global: true
 worlds: 
