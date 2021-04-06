@@ -1,4 +1,4 @@
-package net.viewdns.applecraft;
+package net.viewdns.applecraft;.
 
 import java.util.ArrayList;
 import java.util.Collections;
