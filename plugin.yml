@@ -1,8 +1,8 @@
 name: MCRealTime
-version: 3.7
+version: 3.8
 main: net.viewdns.applecraft.Main
 author: Gabriel Malaka
-authors: [xXDominikPvPXx]
+authors: [Dominik Schmidt]
 website: https://www.gabriel-malaka.ga
 description: Real time synchronization with game time.
 
