@@ -4,7 +4,7 @@ Dear community,
 
  
 
-I have once again brought out a plugin + Updater, which allows the real-time in Minecraft. That means, if e.g. 8pm, it's the same night in Minecraft, the other way around. This plugin works according to the RTC system. The plugin gets the time information from the RTC and transfers that live to Minecraft.
+I have once again brought out a plugin + Updater, which allows the real-time in Minecraft. That means, if e.g. 8pm, it's the same night in Minecraft, the other way around. This plugin works according to the RTC system and synchronize with the time zone you type in the config. The plugin gets the time information from the RTC and transfers that live to Minecraft.
 
  
 
