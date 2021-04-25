@@ -1,20 +1,21 @@
 # If the value "global" is set to true, the entries in "worlds" do not apply.
 # If you only want to use real-time for certain worlds,
 # set "global" to false and complete the string list at "worlds" with the world names.
-# 
+#
 # ATTENTION ! Pay attention to the formal criteria so that mistakes do not occur.
-# 
-# 
+#
+#
 # PS: If you want to reload the standard configuration, simply delete the config.yml file and reload the server.
 # A new config.yml file is created with the standard settings.
 #
 # Please reload or restart your server on every config save after changing.
-# 
+#
+# Put your time zone value in official format like (E.g. UTC, CEST, PST, GMT+1, GMT-8, etc.).
+# You are continue interested in auto updates, set "auto_update" to true
+#
+#
 enable: true
-
-# Put your time zone in short format here ()E.g. UTC, CEST, PST...).
-# You can use of course formats like GMT+2, GMT-8 etc.
-
+auto_update: false
 timezone: "UTC"
 
 global: true
