@@ -27,21 +27,21 @@ You can activate and deactivate the plugin in the config.yml file by setting the
 Here are maybe important commands:
 
  
-
-"/mcrealtime info" - You will get news and status about this plugin.
-"/mcrealtime contact" - You will get information about my contact details, if you have a problem or if you will send a feedback for my plugin.
- "/mcrealtime changelog" - You will get information about the last update.
-"/mcrealtime uninstall" - You will get a manual, how to prepare an uninstall of the plugin. IMPORTANT !
+ 
+"/mcrealtime info" - You will get news and status about this plugin. 
+"/mcrealtime contact" - You will get information about my contact details, if you have a problem or if you will send a feedback for my plugin. 
+"/mcrealtime changelog" - You will get information about the last update. 
+"/mcrealtime uninstall" - You will get a manual, how to prepare an uninstall of the plugin. IMPORTANT ! 
  
 
 Permission: 
 
-"/mcrealtime info" - mcrealtime.use
-"/mcrealtime contact" - mcrealtime.use
-"/mcrealtime changelog" - mcrealtime.use 
-"/mcrealtime uninstall" - mcrealtime.use
-"/mcrealtime update" - mcrealtime.use
-Command tab completion - mcrealtime.use
+"/mcrealtime info" - mcrealtime.use 
+"/mcrealtime contact" - mcrealtime.use 
+"/mcrealtime changelog" - mcrealtime.use 
+"/mcrealtime uninstall" - mcrealtime.use 
+"/mcrealtime update" - mcrealtime.use 
+Command tab completion - mcrealtime.use 
 IMPORTANT:
 
  
