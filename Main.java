@@ -10,40 +10,85 @@ import org.bukkit.World;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitRunnable;
 
+import net.md_5.bungee.api.ChatColor;
+import net.viewdns.applecraft.Updater.ReleaseType;
+
 public class Main extends JavaPlugin implements CommandExecutor{
+
+	public static FileConfiguration config;
 	
-	public String prefix = "§a♦ MCRealTime" + " §2v" + getDescription().getVersion() + " §a♦";
+	public static String prefix;
+	public static List<String> authors;
+	public static String website;
+	public static String description;
+	public static String dversion;
 	
 	public static String timezoneconfig;
 	
-	@SuppressWarnings("unused")
+	public static Updater updater;
+	public static boolean update;
+	public static Updater autoupdater;
+	public static boolean autoupdate;
+	public static String name;
+	public static ReleaseType type;
+	public static String version;
+	public static String link;
+	
 	@Override
 	public void onEnable() {
-		System.out.println("§2TimeServer started !");
-		Updater updater = new Updater(this, 286270, getFile(), Updater.UpdateType.DEFAULT, true);
+		saveDefaultConfig();
+		config = getConfig();
+		config.options().copyDefaults(true);
+		
+		timezoneconfig = config.getString("timezone");
+		dversion = getDescription().getVersion();
+		authors = getDescription().getAuthors();
+		website = getDescription().getWebsite();
+		description = getDescription().getDescription();
+		prefix = "§a♦ MCRealTime" + " §2v" + dversion + " §a♦ ";
+		
+		
+		if(config.getBoolean("auto_update", true)){
+			autoupdater = new Updater(this, 286270, getFile(), Updater.UpdateType.DEFAULT, true);
+		}else {
+			updater = new Updater(this, 286270, getFile(), Updater.UpdateType.NO_DOWNLOAD, false);
+			update = updater.getResult() == Updater.UpdateResult.UPDATE_AVAILABLE;
+			
+			if(update){
+				Bukkit.getConsoleSender().sendMessage(prefix + " " + ChatColor.GREEN + "by " + authors);
+				Bukkit.getConsoleSender().sendMessage(prefix + ChatColor.GREEN + "An update is avaible!");
+				Bukkit.getConsoleSender().sendMessage(prefix + ChatColor.GREEN + "Type as a player /mcrealtime update for auto update and hold your look in the game and server console!");
+			}
+		}
+		Bukkit.getConsoleSender().sendMessage(prefix + ChatColor.GREEN + "TimeServer started!");
+		updater = new Updater(this, 286270, getFile(), Updater.UpdateType.NO_DOWNLOAD, false);
+		name = updater.getLatestName();
+		version = updater.getLatestGameVersion();
+		type = updater.getLatestType();
+		link = updater.getLatestFileLink();
+		
 		getCommand("mcrealtime").setExecutor(this);
 		getCommand("mcrealtime").setTabCompleter(new ConstructTabCompleter());
+		
 		Bukkit.getPluginManager().registerEvents(new NoEnterBedEvent(), this);
+		Bukkit.getPluginManager().registerEvents(new UpdateNotifyJoinEvent(), this);
 		
-		saveDefaultConfig();
-		getConfig().options().copyDefaults(true);
-		
-		timezoneconfig = getConfig().getString("timezone");
-		
-		if(getConfig().getBoolean("enable", true)) {
+		if(config.getBoolean("enable", true)) {
 			
-		if(getConfig().getBoolean("global", true)) {
+		if(config.getBoolean("global", true)) {
 		new BukkitRunnable() {
 			
 			@Override
 			public void run() {
-				for(World global : Bukkit.getWorlds()) {
-					global.setTime(getTime());
-					global.setGameRuleValue("doDaylightCycle", "false");
+				for(World mcworlds : Bukkit.getWorlds()) {
+					mcworlds.setTime(getTime());
+					mcworlds.setGameRuleValue("doDaylightCycle", "false");
+					mcworlds.setGameRuleValue("doInsomnia", "false");
 				}
 			}
 		}.runTaskTimer(this, 0, 1);
@@ -57,9 +102,10 @@ public class Main extends JavaPlugin implements CommandExecutor{
 					
 					List<String> arrayworlds = getConfig().getStringList("worlds");
 					
-					for(String name : arrayworlds) {
-						Bukkit.getWorld(name).setTime(getTime());
-						Bukkit.getWorld(name).setGameRuleValue("doDaylightCycle", "false");
+					for(String mcworlds : arrayworlds) {
+						Bukkit.getWorld(mcworlds).setTime(getTime());
+						Bukkit.getWorld(mcworlds).setGameRuleValue("doDaylightCycle", "false");
+						Bukkit.getWorld(mcworlds).setGameRuleValue("doInsomnia", "false");
 					}
 				}
 			}.runTaskTimer(this, 0, 1);
@@ -69,10 +115,11 @@ public class Main extends JavaPlugin implements CommandExecutor{
 	
 	@Override
 	public void onDisable() {
-		System.out.println("§cTimeServer stopped !");
+		Bukkit.getConsoleSender().sendMessage(prefix + ChatColor.RED + "TimeServer stopped!");
 		
-		for(World w : Bukkit.getWorlds()) {
-			w.setGameRuleValue("doDaylightCycle", "true");
+		for(World mcworlds : Bukkit.getWorlds()) {
+			mcworlds.setGameRuleValue("doDaylightCycle", "true");
+			mcworlds.setGameRuleValue("doInsomnia", "true");
 		}
 	}
 	
@@ -86,6 +133,7 @@ public class Main extends JavaPlugin implements CommandExecutor{
 		return hours+minutes+18000;
 	}
 	
+	@SuppressWarnings("unused")
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 		Player p = (Player)sender;
@@ -103,6 +151,7 @@ public class Main extends JavaPlugin implements CommandExecutor{
 				p.sendMessage("§6Here is a list with all avaible commands: ");
 				p.sendMessage("§c/mcrealtime info §r- §7You'll get important information to this plugin");
 				p.sendMessage("§c/mcrealtime contact §r- §7You'll get my contact information");
+				p.sendMessage("§c/mcrealtime update §r- §7ATTENTION! BEFORE RUN, TAKE A LOOK IN YOUR SERVER CONSOLE! Running an auto update.");
 				p.sendMessage("§c/mcrealtime changelog §r- §7You'll get all changes about the last update");
 				p.sendMessage("§c/mcrealtime uninstall §r- §7Prepare MCRealTime for uninstallation");
 				p.sendMessage("__________________________________________________");
@@ -120,8 +169,8 @@ public class Main extends JavaPlugin implements CommandExecutor{
 				p.sendMessage("__________________________________________________");
 				p.sendMessage(prefix);
 				p.sendMessage("");
-				p.sendMessage("§6Authors: §a" + getDescription().getAuthors());
-				p.sendMessage("§6Website: §a" + getDescription().getWebsite());
+				p.sendMessage("§6Authors: §a" + authors);
+				p.sendMessage("§6Website: §a" + website);
 				p.sendMessage("§6You will get more information with this command:");
 				p.sendMessage("§b/mcrealtime contact");
 				p.sendMessage("§cYou can not type this command: /time set <time> !");
@@ -151,8 +200,7 @@ public class Main extends JavaPlugin implements CommandExecutor{
 				p.sendMessage("§6https://dev.bukkit.org/projects/mcrealtime/issues");
 				p.sendMessage("");
 				p.sendMessage("§6If you have some problems, you can contact me under:");
-				p.sendMessage("§6E-Mail: §agabriel.malaka@freenet.de");
-				p.sendMessage("§bSometimes on my teamspeak 3: §ats.gabriel-malaka.ga");
+				p.sendMessage("§6E-Mail: §acrashkilleryt@freenet.de");
 				p.sendMessage("§6Thanks for understanding !");
 				p.sendMessage("§6See ya around :)");
 				p.sendMessage("__________________________________________________");
@@ -169,13 +217,13 @@ public class Main extends JavaPlugin implements CommandExecutor{
 				p.sendMessage("");
 				p.sendMessage("__________________________________________________");
 				p.sendMessage(prefix);
-				p.sendMessage("§6Made by §a" + getDescription().getAuthors());
-				p.sendMessage("§6Description of the plugin: §a" + getDescription().getDescription());
+				p.sendMessage("§6Made by §a" + authors);
+				p.sendMessage("§6Description of the plugin: §a" + description);
 				p.sendMessage("");
 				p.sendMessage("§6Uninstall:");
 				p.sendMessage("§c1. Shutdown the local server.");
 				p.sendMessage("§c2. Remove MCRealTime from the plugins folder of your server.");
-				p.sendMessage("§c3. That's it ! The gamerule DoDayLightCycle is automatically set on true again !");
+				p.sendMessage("§c3. That's it ! The gamerules DoDayLightCycle and doInsomnia are automatically set on true again !");
 				p.sendMessage("");
 				p.sendMessage("§6Thank you for download and please give me your opportunity as feedback at https://dev.bukkit.org/projects/mcrealtime for permitting me to get better.");
 				p.sendMessage("__________________________________________________");
@@ -192,17 +240,57 @@ public class Main extends JavaPlugin implements CommandExecutor{
 				p.sendMessage("");
 				p.sendMessage("__________________________________________________");
 				p.sendMessage(prefix);
-				p.sendMessage("§6Made by §a" + getDescription().getAuthors());
-				p.sendMessage("§6Description of the plugin: §a" + getDescription().getDescription());
+				p.sendMessage("§6Made by §a" + authors);
+				p.sendMessage("§6Description of the plugin: §a" + description);
 				p.sendMessage("");
 				p.sendMessage("§6Changelogs:");
-				p.sendMessage("§2+ Added time zone settings in config.yml");
+				p.sendMessage("§a+ Added update admin broadcast");
+				p.sendMessage("§a+ Added command /mcrealtime update");
+				p.sendMessage("§a+ Added auto update option in config.yml");
+				p.sendMessage("§c- Removed phantoms with deactivating insomnia while MCRealTime activated");
 				p.sendMessage("__________________________________________________");
 				p.sendMessage("");
 				p.sendMessage("");
 				p.sendMessage("");
 				p.sendMessage("");
 				p.sendMessage("");
+			}else if(args[0].equalsIgnoreCase("update")) {
+				if(config.getBoolean("auto_update", true)){
+					p.sendMessage("");
+					p.sendMessage("");
+					p.sendMessage("");
+					p.sendMessage("");
+					p.sendMessage("");
+					p.sendMessage("__________________________________________________");
+					p.sendMessage(prefix);
+					p.sendMessage("§6Made by §a" + authors);
+					p.sendMessage("§cYou can not do that!");
+					p.sendMessage("§cAuto update is activated!");
+					p.sendMessage("__________________________________________________");
+					p.sendMessage("");
+					p.sendMessage("");
+					p.sendMessage("");
+					p.sendMessage("");
+					p.sendMessage("");
+				}else{
+					Updater updater = new Updater(this, 286270, getFile(), Updater.UpdateType.NO_VERSION_CHECK, true);
+					p.sendMessage("");
+					p.sendMessage("");
+					p.sendMessage("");
+					p.sendMessage("");
+					p.sendMessage("");
+					p.sendMessage("__________________________________________________");
+					p.sendMessage(prefix);
+					p.sendMessage("§6Made by §a" + authors);
+					p.sendMessage("§6The update is running!");
+					p.sendMessage("§6Look in your console. If the update is finished, please restart your minecraft server.");
+					p.sendMessage("__________________________________________________");
+					p.sendMessage("");
+					p.sendMessage("");
+					p.sendMessage("");
+					p.sendMessage("");
+					p.sendMessage("");
+				}
 			}
 } else {
 	p.sendMessage("");
