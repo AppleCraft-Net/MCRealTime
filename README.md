@@ -48,7 +48,7 @@ IMPORTANT:
 
 It works on JRE 8
 
- 
+ h
 
 IT SUPPORTS THE VERSIONS (Bukkit/Craftbukki/Spigot) 1.8 - 1.16.5 ! 
 
