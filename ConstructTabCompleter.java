@@ -25,6 +25,7 @@ public class ConstructTabCompleter implements TabCompleter{
 				if(p.hasPermission("mcrealtime.use")) {
 					commands.add("info");
 					commands.add("contact");
+					commands.add("update");
 					commands.add("uninstall");
 					commands.add("changelog");
 				}
