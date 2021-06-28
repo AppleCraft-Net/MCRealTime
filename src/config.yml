@@ -11,7 +11,7 @@
 # Please reload or restart your server on every config save after changing.
 #
 # Put your time zone value in official format like (E.g. UTC, CEST, PST, GMT+1, GMT-8, etc.).
-# You are continue interested in auto updates, set "auto_update" to true
+# You are continue interested in auto updates, set "auto_update" to true.
 #
 #
 enable: true
@@ -24,3 +24,14 @@ worlds:
    - world2
    - world3
    - ...
+
+#You can here modify the perms for all commands which you like.
+#The permission for "admin" allowes the player to get update notifications and constructed tab completion on main command.
+Permissions:
+   admin: "mcrealtime.use"
+   
+   info: "mcrealtime.use"
+   contact: "mcrealtime.use"
+   uninstall: "mcrealtime.use"
+   changelog: "mcrealtime.use"
+   update: "mcrealtime.use"

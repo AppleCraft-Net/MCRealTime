@@ -17,7 +17,7 @@ public class UpdateNotifyJoinEvent implements Listener{
 		
 			if(Main.config.getBoolean("auto_update", true)){
 				autoupdate = Main.autoupdater.getResult() == Updater.UpdateResult.UPDATE_AVAILABLE;
-				if(p.hasPermission("mcrealtime.use") && autoupdate){
+				if(p.hasPermission(Main.config.getString("Permissions.admin")) && autoupdate){
 					p.sendMessage("__________________________________________________");
 					p.sendMessage(Main.prefix + " " + ChatColor.GREEN + "by " + Main.authors);
 					p.sendMessage("§6The Update " + Main.name + ", Type: " + Main.type + " for " + Main.version + "(+) was updated successfully!");
@@ -26,7 +26,7 @@ public class UpdateNotifyJoinEvent implements Listener{
 				}
 			}else{
 				update = Main.updater.getResult() == Updater.UpdateResult.UPDATE_AVAILABLE;
-				if(p.hasPermission("mcrealtime.use") && update){
+				if(p.hasPermission(Main.config.getString("Permissions.admin")) && update){
 					p.sendMessage("__________________________________________________");
 					p.sendMessage(Main.prefix + " " + ChatColor.GREEN + "by " + Main.authors);
 					p.sendMessage("§6An update is avaible: " + Main.name + ", Type: " + Main.type + " for " + Main.version + "(+)" + " avaible at " + Main.link);

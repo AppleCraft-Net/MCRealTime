@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.TimeZone;
 
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.World;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -14,8 +15,6 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitRunnable;
-
-import net.md_5.bungee.api.ChatColor;
 import net.viewdns.applecraft.Updater.ReleaseType;
 
 public class Main extends JavaPlugin implements CommandExecutor{
@@ -30,6 +29,7 @@ public class Main extends JavaPlugin implements CommandExecutor{
 	
 	public static String timezoneconfig;
 	
+	public static int x_update = 0;
 	public static Updater updater;
 	public static boolean update;
 	public static Updater autoupdater;
@@ -100,7 +100,7 @@ public class Main extends JavaPlugin implements CommandExecutor{
 				@Override
 				public void run() {
 					
-					List<String> arrayworlds = getConfig().getStringList("worlds");
+					List<String> arrayworlds = config.getStringList("worlds");
 					
 					for(String mcworlds : arrayworlds) {
 						Bukkit.getWorld(mcworlds).setTime(getTime());
@@ -138,8 +138,7 @@ public class Main extends JavaPlugin implements CommandExecutor{
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 		Player p = (Player)sender;
 		
-		if(p.hasPermission("mcrealtime.use")) {
-			if(args.length != 1) {
+		if(args.length != 1) {
 				p.sendMessage("");
 				p.sendMessage("");
 				p.sendMessage("");
@@ -161,32 +160,67 @@ public class Main extends JavaPlugin implements CommandExecutor{
 				p.sendMessage("");
 				p.sendMessage("");
 			}else if(args[0].equalsIgnoreCase("info")) {
-				p.sendMessage("");
-				p.sendMessage("");
-				p.sendMessage("");
-				p.sendMessage("");
-				p.sendMessage("");
-				p.sendMessage("__________________________________________________");
-				p.sendMessage(prefix);
-				p.sendMessage("");
-				p.sendMessage("§6Authors: §a" + authors);
-				p.sendMessage("§6Website: §a" + website);
-				p.sendMessage("§6You will get more information with this command:");
-				p.sendMessage("§b/mcrealtime contact");
-				p.sendMessage("§cYou can not type this command: /time set <time> !");
-				p.sendMessage("§bThis plugin is an OpenSource project !");
-				p.sendMessage("§bIt means, that you have all rights reserved !");
-				p.sendMessage("§bYou have all rights reserved in case of the MIT License !");
-				p.sendMessage("§6I wish you much fun with that. Yours Faithfuly Dev_Gabriel_M ! :)");
-				p.sendMessage("");
-				p.sendMessage("§bPS: Take a look in the config file for more settings.");
-				p.sendMessage("__________________________________________________");
-				p.sendMessage("");
-				p.sendMessage("");
-				p.sendMessage("");
-				p.sendMessage("");
-				p.sendMessage("");
+				if(!p.hasPermission(config.getString("Permissions.info"))) {
+					p.sendMessage("");
+					p.sendMessage("");
+					p.sendMessage("");
+					p.sendMessage("");
+					p.sendMessage("");
+					p.sendMessage("__________________________________________________");
+					p.sendMessage(prefix);
+					p.sendMessage("");
+					p.sendMessage("§cYou do not have permissions to perform this command !");
+					p.sendMessage("__________________________________________________");
+					p.sendMessage("");
+					p.sendMessage("");
+					p.sendMessage("");
+					p.sendMessage("");
+					p.sendMessage("");
+				}else {
+					p.sendMessage("");
+					p.sendMessage("");
+					p.sendMessage("");
+					p.sendMessage("");
+					p.sendMessage("");
+					p.sendMessage("__________________________________________________");
+					p.sendMessage(prefix);
+					p.sendMessage("");
+					p.sendMessage("§6Authors: §a" + authors);
+					p.sendMessage("§6Website: §a" + website);
+					p.sendMessage("§6You will get more information with this command:");
+					p.sendMessage("§b/mcrealtime contact");
+					p.sendMessage("§cYou can not type this command: /time set <time> !");
+					p.sendMessage("§bThis plugin is an OpenSource project !");
+					p.sendMessage("§bIt means, that you have all rights reserved !");
+					p.sendMessage("§bYou have all rights reserved in case of the MIT License !");
+					p.sendMessage("§6I wish you much fun with that. Yours Faithfuly Dev_Gabriel_M ! :)");
+					p.sendMessage("");
+					p.sendMessage("§bPS: Take a look in the config file for more settings.");
+					p.sendMessage("__________________________________________________");
+					p.sendMessage("");
+					p.sendMessage("");
+					p.sendMessage("");
+					p.sendMessage("");
+					p.sendMessage("");
+				}
 			}else if(args[0].equalsIgnoreCase("contact")) {
+				if(!p.hasPermission(config.getString("Permissions.contact"))) {
+					p.sendMessage("");
+					p.sendMessage("");
+					p.sendMessage("");
+					p.sendMessage("");
+					p.sendMessage("");
+					p.sendMessage("__________________________________________________");
+					p.sendMessage(prefix);
+					p.sendMessage("");
+					p.sendMessage("§cYou do not have permissions to perform this command !");
+					p.sendMessage("__________________________________________________");
+					p.sendMessage("");
+					p.sendMessage("");
+					p.sendMessage("");
+					p.sendMessage("");
+					p.sendMessage("");
+				}else {
 				p.sendMessage("");
 				p.sendMessage("");
 				p.sendMessage("");
@@ -209,7 +243,25 @@ public class Main extends JavaPlugin implements CommandExecutor{
 				p.sendMessage("");
 				p.sendMessage("");
 				p.sendMessage("");
+				}
 			}else if(args[0].equalsIgnoreCase("uninstall")) {
+				if(!p.hasPermission(config.getString("Permissions.uninstall"))) {
+					p.sendMessage("");
+					p.sendMessage("");
+					p.sendMessage("");
+					p.sendMessage("");
+					p.sendMessage("");
+					p.sendMessage("__________________________________________________");
+					p.sendMessage(prefix);
+					p.sendMessage("");
+					p.sendMessage("§cYou do not have permissions to perform this command !");
+					p.sendMessage("__________________________________________________");
+					p.sendMessage("");
+					p.sendMessage("");
+					p.sendMessage("");
+					p.sendMessage("");
+					p.sendMessage("");
+				}else {
 				p.sendMessage("");
 				p.sendMessage("");
 				p.sendMessage("");
@@ -232,7 +284,25 @@ public class Main extends JavaPlugin implements CommandExecutor{
 				p.sendMessage("");
 				p.sendMessage("");
 				p.sendMessage("");
+				}
 			}else if(args[0].equalsIgnoreCase("changelog")) {
+				if(!p.hasPermission(config.getString("Permissions.changelog"))) {
+					p.sendMessage("");
+					p.sendMessage("");
+					p.sendMessage("");
+					p.sendMessage("");
+					p.sendMessage("");
+					p.sendMessage("__________________________________________________");
+					p.sendMessage(prefix);
+					p.sendMessage("");
+					p.sendMessage("§cYou do not have permissions to perform this command !");
+					p.sendMessage("__________________________________________________");
+					p.sendMessage("");
+					p.sendMessage("");
+					p.sendMessage("");
+					p.sendMessage("");
+					p.sendMessage("");
+				}else {
 				p.sendMessage("");
 				p.sendMessage("");
 				p.sendMessage("");
@@ -244,71 +314,106 @@ public class Main extends JavaPlugin implements CommandExecutor{
 				p.sendMessage("§6Description of the plugin: §a" + description);
 				p.sendMessage("");
 				p.sendMessage("§6Changelogs:");
-				p.sendMessage("§a+ Added update admin broadcast");
-				p.sendMessage("§a+ Added command /mcrealtime update");
-				p.sendMessage("§a+ Added auto update option in config.yml");
-				p.sendMessage("§c- Removed phantoms with deactivating insomnia while MCRealTime activated");
+				p.sendMessage("§a+ Added version support 1.8 - 1.17");
+				p.sendMessage("§a+ Added update to cmd /mcrealtime update");
 				p.sendMessage("__________________________________________________");
 				p.sendMessage("");
 				p.sendMessage("");
 				p.sendMessage("");
 				p.sendMessage("");
 				p.sendMessage("");
-			}else if(args[0].equalsIgnoreCase("update")) {
-				if(config.getBoolean("auto_update", true)){
-					p.sendMessage("");
-					p.sendMessage("");
-					p.sendMessage("");
-					p.sendMessage("");
-					p.sendMessage("");
-					p.sendMessage("__________________________________________________");
-					p.sendMessage(prefix);
-					p.sendMessage("§6Made by §a" + authors);
-					p.sendMessage("§cYou can not do that!");
-					p.sendMessage("§cAuto update is activated!");
-					p.sendMessage("__________________________________________________");
-					p.sendMessage("");
-					p.sendMessage("");
-					p.sendMessage("");
-					p.sendMessage("");
-					p.sendMessage("");
-				}else{
-					Updater updater = new Updater(this, 286270, getFile(), Updater.UpdateType.NO_VERSION_CHECK, true);
-					p.sendMessage("");
-					p.sendMessage("");
-					p.sendMessage("");
-					p.sendMessage("");
-					p.sendMessage("");
-					p.sendMessage("__________________________________________________");
-					p.sendMessage(prefix);
-					p.sendMessage("§6Made by §a" + authors);
-					p.sendMessage("§6The update is running!");
-					p.sendMessage("§6Look in your console. If the update is finished, please restart your minecraft server.");
-					p.sendMessage("__________________________________________________");
-					p.sendMessage("");
-					p.sendMessage("");
-					p.sendMessage("");
-					p.sendMessage("");
-					p.sendMessage("");
 				}
-			}
-} else {
-	p.sendMessage("");
-	p.sendMessage("");
-	p.sendMessage("");
-	p.sendMessage("");
-	p.sendMessage("");
-	p.sendMessage("__________________________________________________");
-	p.sendMessage(prefix);
-	p.sendMessage("");
-	p.sendMessage("§cYou do not have permissions to perform this command !");
-	p.sendMessage("__________________________________________________");
-	p.sendMessage("");
-	p.sendMessage("");
-	p.sendMessage("");
-	p.sendMessage("");
-	p.sendMessage("");
-}
+			}else if(args[0].equalsIgnoreCase("update")) {
+				if(!p.hasPermission(config.getString("Permissions.update"))) {
+					p.sendMessage("");
+					p.sendMessage("");
+					p.sendMessage("");
+					p.sendMessage("");
+					p.sendMessage("");
+					p.sendMessage("__________________________________________________");
+					p.sendMessage(prefix);
+					p.sendMessage("");
+					p.sendMessage("§cYou do not have permissions to perform this command !");
+					p.sendMessage("__________________________________________________");
+					p.sendMessage("");
+					p.sendMessage("");
+					p.sendMessage("");
+					p.sendMessage("");
+					p.sendMessage("");
+				}else {
+					if(update = updater.getResult() == Updater.UpdateResult.UPDATE_AVAILABLE) {
+						if(config.getBoolean("auto_update", true)){
+							p.sendMessage("");
+							p.sendMessage("");
+							p.sendMessage("");
+							p.sendMessage("");
+							p.sendMessage("");
+							p.sendMessage("__________________________________________________");
+							p.sendMessage(prefix);
+							p.sendMessage("§6Made by §a" + authors);
+							p.sendMessage("§cYou can not do that!");
+							p.sendMessage("§cAuto update is activated!");
+							p.sendMessage("__________________________________________________");
+							p.sendMessage("");
+							p.sendMessage("");
+							p.sendMessage("");
+							p.sendMessage("");
+							p.sendMessage("");
+						}else if(x_update == 0){
+							x_update = 1;
+							Updater updater = new Updater(this, 286270, getFile(), Updater.UpdateType.NO_VERSION_CHECK, true);
+							p.sendMessage("");
+							p.sendMessage("");
+							p.sendMessage("");
+							p.sendMessage("");
+							p.sendMessage("");
+							p.sendMessage("__________________________________________________");
+							p.sendMessage(prefix);
+							p.sendMessage("§6Made by §a" + authors);
+							p.sendMessage("§6The update is running!");
+							p.sendMessage("§6Look in your console. If the update is finished, please restart your minecraft server.");
+							p.sendMessage("__________________________________________________");
+							p.sendMessage("");
+							p.sendMessage("");
+							p.sendMessage("");
+							p.sendMessage("");
+							p.sendMessage("");
+						} else {
+							p.sendMessage("");
+							p.sendMessage("");
+							p.sendMessage("");
+							p.sendMessage("");
+							p.sendMessage("");
+							p.sendMessage("__________________________________________________");
+							p.sendMessage(prefix);
+							p.sendMessage("§6Made by §a" + authors);
+							p.sendMessage("§aUpdate is running... Check your console!");
+							p.sendMessage("__________________________________________________");
+							p.sendMessage("");
+							p.sendMessage("");
+							p.sendMessage("");
+							p.sendMessage("");
+							p.sendMessage("");
+						}
+					} else {
+						p.sendMessage("");
+						p.sendMessage("");
+						p.sendMessage("");
+						p.sendMessage("");
+						p.sendMessage("");
+						p.sendMessage("__________________________________________________");
+						p.sendMessage(prefix);
+						p.sendMessage("§6Made by §a" + authors);
+						p.sendMessage("§aMCRealTime is up to date!");
+						p.sendMessage("__________________________________________________");
+						p.sendMessage("");
+						p.sendMessage("");
+						p.sendMessage("");
+						p.sendMessage("");
+						p.sendMessage("");
+					}
+				}
+				}
 		return true;
 	}
 }

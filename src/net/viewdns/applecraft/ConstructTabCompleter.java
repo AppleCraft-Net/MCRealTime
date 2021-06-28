@@ -22,7 +22,7 @@ public class ConstructTabCompleter implements TabCompleter{
 			
 				Player p = (Player) sender;
 				
-				if(p.hasPermission("mcrealtime.use")) {
+				if(p.hasPermission(Main.config.getString("Permissions.admin"))) {
 					commands.add("info");
 					commands.add("contact");
 					commands.add("update");
