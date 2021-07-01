@@ -55,14 +55,27 @@ public class Main extends JavaPlugin implements CommandExecutor{
 		
 		if(config.getBoolean("auto_update", true)){
 			autoupdater = new Updater(this, 286270, getFile(), Updater.UpdateType.DEFAULT, true);
+			autoupdate = autoupdater.getResult() == Updater.UpdateResult.UPDATE_AVAILABLE;
+			
+			if(autoupdate) {
+				Bukkit.getConsoleSender().sendMessage("__________________________________________________");
+				Bukkit.getConsoleSender().sendMessage(prefix + " " + ChatColor.GREEN + "by " + Main.authors);
+				Bukkit.getConsoleSender().sendMessage(ChatColor.GOLD + "The Update " + Main.name + ", Type: " + Main.type + " for " + Main.version + "(+) was updated successfully!");
+				Bukkit.getConsoleSender().sendMessage(ChatColor.RED + "Please restart your minecraft server!");
+				Bukkit.getConsoleSender().sendMessage("__________________________________________________");
+			}
 		}else {
 			updater = new Updater(this, 286270, getFile(), Updater.UpdateType.NO_DOWNLOAD, false);
 			update = updater.getResult() == Updater.UpdateResult.UPDATE_AVAILABLE;
 			
 			if(update){
-				Bukkit.getConsoleSender().sendMessage(prefix + " " + ChatColor.GREEN + "by " + authors);
-				Bukkit.getConsoleSender().sendMessage(prefix + ChatColor.GREEN + "An update is avaible!");
-				Bukkit.getConsoleSender().sendMessage(prefix + ChatColor.GREEN + "Type as a player /mcrealtime update for auto update and hold your look in the game and server console!");
+				Bukkit.getConsoleSender().sendMessage("__________________________________________________");
+				Bukkit.getConsoleSender().sendMessage(prefix + " " + ChatColor.GREEN + "by " + Main.authors);
+				Bukkit.getConsoleSender().sendMessage(ChatColor.GOLD + "An update is avaible: " + Main.name + ", Type: " + Main.type + " for " + Main.version + "(+)" + " avaible at " + Main.link);
+				Bukkit.getConsoleSender().sendMessage(ChatColor.GOLD + "Type /mcrealtime update if you would like to automatically update.");
+				Bukkit.getConsoleSender().sendMessage(ChatColor.RED + "Before you run the command, please open your server console.");
+				Bukkit.getConsoleSender().sendMessage(ChatColor.RED + "After the update finsish, please restart your minecraft server!");
+				Bukkit.getConsoleSender().sendMessage("__________________________________________________");
 			}
 		}
 		Bukkit.getConsoleSender().sendMessage(prefix + ChatColor.GREEN + "TimeServer started!");
