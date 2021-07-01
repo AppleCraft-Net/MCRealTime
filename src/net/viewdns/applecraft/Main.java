@@ -50,7 +50,7 @@ public class Main extends JavaPlugin implements CommandExecutor{
 		authors = getDescription().getAuthors();
 		website = getDescription().getWebsite();
 		description = getDescription().getDescription();
-		prefix = "§a♦ MCRealTime" + " §2v" + dversion + " §a♦ ";
+		prefix = ChatColor.DARK_GREEN + "♦ MCRealTime" + ChatColor.DARK_GREEN + " v" + dversion + ChatColor.GREEN + " ♦ ";
 		
 		
 		if(config.getBoolean("auto_update", true)){
@@ -59,8 +59,8 @@ public class Main extends JavaPlugin implements CommandExecutor{
 			
 			if(autoupdate) {
 				Bukkit.getConsoleSender().sendMessage("__________________________________________________");
-				Bukkit.getConsoleSender().sendMessage(prefix + " " + ChatColor.GREEN + "by " + Main.authors);
-				Bukkit.getConsoleSender().sendMessage(ChatColor.GOLD + "The Update " + Main.name + ", Type: " + Main.type + " for " + Main.version + "(+) was updated successfully!");
+				Bukkit.getConsoleSender().sendMessage(prefix + " " + ChatColor.GREEN + "by " + authors);
+				Bukkit.getConsoleSender().sendMessage(ChatColor.GOLD + "The Update " + name + ", Type: " + type + " for " + version + "(+) was updated successfully!");
 				Bukkit.getConsoleSender().sendMessage(ChatColor.RED + "Please restart your minecraft server!");
 				Bukkit.getConsoleSender().sendMessage("__________________________________________________");
 			}
@@ -160,12 +160,12 @@ public class Main extends JavaPlugin implements CommandExecutor{
 				p.sendMessage("__________________________________________________");
 				p.sendMessage(prefix);
 				p.sendMessage("");
-				p.sendMessage("§6Here is a list with all avaible commands: ");
-				p.sendMessage("§c/mcrealtime info §r- §7You'll get important information to this plugin");
-				p.sendMessage("§c/mcrealtime contact §r- §7You'll get my contact information");
-				p.sendMessage("§c/mcrealtime update §r- §7ATTENTION! BEFORE RUN, TAKE A LOOK IN YOUR SERVER CONSOLE! Running an auto update.");
-				p.sendMessage("§c/mcrealtime changelog §r- §7You'll get all changes about the last update");
-				p.sendMessage("§c/mcrealtime uninstall §r- §7Prepare MCRealTime for uninstallation");
+				p.sendMessage(ChatColor.GOLD + "Here is a list with all avaible commands: ");
+				p.sendMessage(ChatColor.RED + "/mcrealtime info " + ChatColor.WHITE + "- " + ChatColor.GRAY + "You'll get important information to this plugin");
+				p.sendMessage(ChatColor.RED + "/mcrealtime contact " + ChatColor.WHITE + "- " + ChatColor.GRAY + "You'll get my contact information");
+				p.sendMessage(ChatColor.RED + "/mcrealtime update " + ChatColor.WHITE + "- " + ChatColor.GRAY + "ATTENTION! BEFORE RUN, TAKE A LOOK IN YOUR SERVER CONSOLE! Running an auto update.");
+				p.sendMessage(ChatColor.RED + "/mcrealtime changelog " + ChatColor.WHITE + "- " + ChatColor.GRAY + " You'll get all changes about the last update");
+				p.sendMessage(ChatColor.RED + "/mcrealtime uninstall " + ChatColor.WHITE + "- " + ChatColor.GRAY + "Prepare MCRealTime for uninstallation");
 				p.sendMessage("__________________________________________________");
 				p.sendMessage("");
 				p.sendMessage("");
@@ -182,7 +182,7 @@ public class Main extends JavaPlugin implements CommandExecutor{
 					p.sendMessage("__________________________________________________");
 					p.sendMessage(prefix);
 					p.sendMessage("");
-					p.sendMessage("§cYou do not have permissions to perform this command !");
+					p.sendMessage(ChatColor.RED + "You do not have permissions to perform this command !");
 					p.sendMessage("__________________________________________________");
 					p.sendMessage("");
 					p.sendMessage("");
@@ -198,17 +198,17 @@ public class Main extends JavaPlugin implements CommandExecutor{
 					p.sendMessage("__________________________________________________");
 					p.sendMessage(prefix);
 					p.sendMessage("");
-					p.sendMessage("§6Authors: §a" + authors);
-					p.sendMessage("§6Website: §a" + website);
-					p.sendMessage("§6You will get more information with this command:");
-					p.sendMessage("§b/mcrealtime contact");
-					p.sendMessage("§cYou can not type this command: /time set <time> !");
-					p.sendMessage("§bThis plugin is an OpenSource project !");
-					p.sendMessage("§bIt means, that you have all rights reserved !");
-					p.sendMessage("§bYou have all rights reserved in case of the MIT License !");
-					p.sendMessage("§6I wish you much fun with that. Yours Faithfuly Dev_Gabriel_M ! :)");
+					p.sendMessage(ChatColor.GOLD + "Authors: " + ChatColor.GREEN + authors);
+					p.sendMessage(ChatColor.GOLD + "Website: " + ChatColor.GREEN + website);
+					p.sendMessage(ChatColor.GOLD + "You will get more information with this command:");
+					p.sendMessage(ChatColor.AQUA + "/mcrealtime contact");
+					p.sendMessage(ChatColor.RED + "You can not type this command: /time set <time> !");
+					p.sendMessage(ChatColor.AQUA + "This plugin is an OpenSource project !");
+					p.sendMessage(ChatColor.AQUA + "It means, that you have all rights reserved !");
+					p.sendMessage(ChatColor.AQUA + "You have all rights reserved in case of the MIT License !");
+					p.sendMessage(ChatColor.GOLD + "I wish you much fun with that. Yours Faithfuly Dev_Gabriel_M ! :)");
 					p.sendMessage("");
-					p.sendMessage("§bPS: Take a look in the config file for more settings.");
+					p.sendMessage(ChatColor.AQUA + "PS: Take a look in the config file for more settings.");
 					p.sendMessage("__________________________________________________");
 					p.sendMessage("");
 					p.sendMessage("");
@@ -226,7 +226,7 @@ public class Main extends JavaPlugin implements CommandExecutor{
 					p.sendMessage("__________________________________________________");
 					p.sendMessage(prefix);
 					p.sendMessage("");
-					p.sendMessage("§cYou do not have permissions to perform this command !");
+					p.sendMessage(ChatColor.RED + "You do not have permissions to perform this command !");
 					p.sendMessage("__________________________________________________");
 					p.sendMessage("");
 					p.sendMessage("");
@@ -242,14 +242,14 @@ public class Main extends JavaPlugin implements CommandExecutor{
 				p.sendMessage("__________________________________________________");
 				p.sendMessage(prefix);
 				p.sendMessage("");
-				p.sendMessage("§6You have some problems or you want post a feedback ?");
-				p.sendMessage("§6No problem ! You could me send your feedback on the issue site of:");
-				p.sendMessage("§6https://dev.bukkit.org/projects/mcrealtime/issues");
+				p.sendMessage(ChatColor.GOLD + "You have some problems or you want post a feedback ?");
+				p.sendMessage(ChatColor.GOLD + "No problem ! You could me send your feedback on the issue site of:");
+				p.sendMessage(ChatColor.GOLD + "https://dev.bukkit.org/projects/mcrealtime/issues");
 				p.sendMessage("");
-				p.sendMessage("§6If you have some problems, you can contact me under:");
-				p.sendMessage("§6E-Mail: §acrashkilleryt@freenet.de");
-				p.sendMessage("§6Thanks for understanding !");
-				p.sendMessage("§6See ya around :)");
+				p.sendMessage(ChatColor.GOLD + "If you have some problems, you can contact me under:");
+				p.sendMessage(ChatColor.GOLD + "E-Mail: " + ChatColor.GREEN + "crashkilleryt@freenet.de");
+				p.sendMessage(ChatColor.GOLD + "Thanks for understanding !");
+				p.sendMessage(ChatColor.GOLD + "See ya around :)");
 				p.sendMessage("__________________________________________________");
 				p.sendMessage("");
 				p.sendMessage("");
@@ -267,7 +267,7 @@ public class Main extends JavaPlugin implements CommandExecutor{
 					p.sendMessage("__________________________________________________");
 					p.sendMessage(prefix);
 					p.sendMessage("");
-					p.sendMessage("§cYou do not have permissions to perform this command !");
+					p.sendMessage(ChatColor.RED + "You do not have permissions to perform this command !");
 					p.sendMessage("__________________________________________________");
 					p.sendMessage("");
 					p.sendMessage("");
@@ -282,15 +282,15 @@ public class Main extends JavaPlugin implements CommandExecutor{
 				p.sendMessage("");
 				p.sendMessage("__________________________________________________");
 				p.sendMessage(prefix);
-				p.sendMessage("§6Made by §a" + authors);
-				p.sendMessage("§6Description of the plugin: §a" + description);
+				p.sendMessage(ChatColor.GOLD + "Made by " + ChatColor.GREEN + authors);
+				p.sendMessage(ChatColor.GOLD + "Description of the plugin: " + ChatColor.GREEN + description);
 				p.sendMessage("");
-				p.sendMessage("§6Uninstall:");
-				p.sendMessage("§c1. Shutdown the local server.");
-				p.sendMessage("§c2. Remove MCRealTime from the plugins folder of your server.");
-				p.sendMessage("§c3. That's it ! The gamerules DoDayLightCycle and doInsomnia are automatically set on true again !");
+				p.sendMessage(ChatColor.GOLD + "Uninstall:");
+				p.sendMessage(ChatColor.RED + "1. Shutdown the local server.");
+				p.sendMessage(ChatColor.RED + "2. Remove MCRealTime from the plugins folder of your server.");
+				p.sendMessage(ChatColor.RED + "3. That's it ! The gamerules DoDayLightCycle and doInsomnia are automatically set on true again !");
 				p.sendMessage("");
-				p.sendMessage("§6Thank you for download and please give me your opportunity as feedback at https://dev.bukkit.org/projects/mcrealtime for permitting me to get better.");
+				p.sendMessage(ChatColor.GOLD + "Thank you for download and please give me your opportunity as feedback at https://dev.bukkit.org/projects/mcrealtime for permitting me to get better.");
 				p.sendMessage("__________________________________________________");
 				p.sendMessage("");
 				p.sendMessage("");
@@ -308,7 +308,7 @@ public class Main extends JavaPlugin implements CommandExecutor{
 					p.sendMessage("__________________________________________________");
 					p.sendMessage(prefix);
 					p.sendMessage("");
-					p.sendMessage("§cYou do not have permissions to perform this command !");
+					p.sendMessage(ChatColor.RED + "You do not have permissions to perform this command !");
 					p.sendMessage("__________________________________________________");
 					p.sendMessage("");
 					p.sendMessage("");
@@ -323,12 +323,12 @@ public class Main extends JavaPlugin implements CommandExecutor{
 				p.sendMessage("");
 				p.sendMessage("__________________________________________________");
 				p.sendMessage(prefix);
-				p.sendMessage("§6Made by §a" + authors);
-				p.sendMessage("§6Description of the plugin: §a" + description);
+				p.sendMessage(ChatColor.GOLD + "Made by " + ChatColor.GREEN + authors);
+				p.sendMessage(ChatColor.GOLD + "Description of the plugin: " + ChatColor.GREEN + description);
 				p.sendMessage("");
-				p.sendMessage("§6Changelogs:");
-				p.sendMessage("§a+ Added version support 1.8 - 1.17");
-				p.sendMessage("§a+ Added update to cmd /mcrealtime update");
+				p.sendMessage(ChatColor.GOLD + "Changelogs:");
+				p.sendMessage(ChatColor.GREEN + "+ Added version support 1.8 - 1.17");
+				p.sendMessage(ChatColor.GREEN + "+ Added update to cmd /mcrealtime update");
 				p.sendMessage("__________________________________________________");
 				p.sendMessage("");
 				p.sendMessage("");
@@ -346,7 +346,7 @@ public class Main extends JavaPlugin implements CommandExecutor{
 					p.sendMessage("__________________________________________________");
 					p.sendMessage(prefix);
 					p.sendMessage("");
-					p.sendMessage("§cYou do not have permissions to perform this command !");
+					p.sendMessage(ChatColor.RED + "You do not have permissions to perform this command !");
 					p.sendMessage("__________________________________________________");
 					p.sendMessage("");
 					p.sendMessage("");
@@ -363,9 +363,9 @@ public class Main extends JavaPlugin implements CommandExecutor{
 							p.sendMessage("");
 							p.sendMessage("__________________________________________________");
 							p.sendMessage(prefix);
-							p.sendMessage("§6Made by §a" + authors);
-							p.sendMessage("§cYou can not do that!");
-							p.sendMessage("§cAuto update is activated!");
+							p.sendMessage(ChatColor.GOLD + "Made by §a" + authors);
+							p.sendMessage(ChatColor.RED + "You can not do that!");
+							p.sendMessage(ChatColor.RED + "Auto update is activated!");
 							p.sendMessage("__________________________________________________");
 							p.sendMessage("");
 							p.sendMessage("");
@@ -382,9 +382,9 @@ public class Main extends JavaPlugin implements CommandExecutor{
 							p.sendMessage("");
 							p.sendMessage("__________________________________________________");
 							p.sendMessage(prefix);
-							p.sendMessage("§6Made by §a" + authors);
-							p.sendMessage("§6The update is running!");
-							p.sendMessage("§6Look in your console. If the update is finished, please restart your minecraft server.");
+							p.sendMessage(ChatColor.GOLD + "Made by " + ChatColor.GREEN + authors);
+							p.sendMessage(ChatColor.GOLD + "The update is running!");
+							p.sendMessage(ChatColor.GOLD + "Look in your console. If the update is finished, please restart your minecraft server.");
 							p.sendMessage("__________________________________________________");
 							p.sendMessage("");
 							p.sendMessage("");
@@ -399,8 +399,8 @@ public class Main extends JavaPlugin implements CommandExecutor{
 							p.sendMessage("");
 							p.sendMessage("__________________________________________________");
 							p.sendMessage(prefix);
-							p.sendMessage("§6Made by §a" + authors);
-							p.sendMessage("§aUpdate is running... Check your console!");
+							p.sendMessage(ChatColor.GOLD + "Made by " + ChatColor.GREEN + authors);
+							p.sendMessage(ChatColor.GREEN + "Update is running... Check your console!");
 							p.sendMessage("__________________________________________________");
 							p.sendMessage("");
 							p.sendMessage("");
@@ -416,8 +416,8 @@ public class Main extends JavaPlugin implements CommandExecutor{
 						p.sendMessage("");
 						p.sendMessage("__________________________________________________");
 						p.sendMessage(prefix);
-						p.sendMessage("§6Made by §a" + authors);
-						p.sendMessage("§aMCRealTime is up to date!");
+						p.sendMessage(ChatColor.GOLD + "Made by " + ChatColor.GREEN + authors);
+						p.sendMessage(ChatColor.GREEN + "MCRealTime is up to date!");
 						p.sendMessage("__________________________________________________");
 						p.sendMessage("");
 						p.sendMessage("");

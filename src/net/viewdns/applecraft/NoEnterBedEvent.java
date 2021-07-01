@@ -1,5 +1,6 @@
 package net.viewdns.applecraft;
 
+import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
@@ -18,9 +19,9 @@ public class NoEnterBedEvent implements Listener {
 			p.sendMessage("");
 			p.sendMessage("");
 			p.sendMessage("__________________________________________________");
-			p.sendMessage("§a♦ MCRealTime ♦");
+			p.sendMessage(ChatColor.GREEN + "♦ MCRealTime ♦");
 			p.sendMessage("");
-			p.sendMessage("§cYou can't sleep while real time simulation. Comming maybe soon !");
+			p.sendMessage(ChatColor.RED + "You can't sleep while real time simulation. Comming maybe soon !");
 			p.sendMessage("__________________________________________________");
 			p.sendMessage("");
 			p.sendMessage("");
