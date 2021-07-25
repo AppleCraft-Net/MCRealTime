@@ -327,8 +327,9 @@ public class Main extends JavaPlugin implements CommandExecutor{
 				p.sendMessage(ChatColor.GOLD + "Description of the plugin: " + ChatColor.GREEN + description);
 				p.sendMessage("");
 				p.sendMessage(ChatColor.GOLD + "Changelogs:");
-				p.sendMessage(ChatColor.GREEN + "+ Added version support 1.8 - 1.17");
+				p.sendMessage(ChatColor.GREEN + "+ Added version support 1.8 - 1.17.1");
 				p.sendMessage(ChatColor.GREEN + "+ Added update to cmd /mcrealtime update");
+				p.sendMessage(ChatColor.GREEN + "+ Added admin friendly permission options in config.yml");
 				p.sendMessage("__________________________________________________");
 				p.sendMessage("");
 				p.sendMessage("");
