@@ -49,11 +49,11 @@ IMPORTANT:
 
  
 
-It works on JRE 8-16
+It works on JRE 8-16.
 
  
 
-IT SUPPORTS THE VERSIONS (Bukkit/Craftbukkit/Spigot) 1.8 - 1.17 ! 
+IT SUPPORTS THE VERSIONS (Bukkit/Craftbukkit/Spigot) 1.8 - 1.17.1 ! 
 
  
 
