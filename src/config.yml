@@ -35,3 +35,4 @@ Permissions:
    uninstall: "mcrealtime.use"
    changelog: "mcrealtime.use"
    update: "mcrealtime.use"
+   reload: "mcrealtime.reload" #Command is not in use. Just for error prevention.
