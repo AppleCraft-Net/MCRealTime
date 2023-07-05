@@ -1,8 +1,8 @@
 name: MCRealTime
-version: 4.1
-main: net.viewdns.applecraft.Main
-authors: [Gabriel M.,Dominik S.]
-website: https://www.gabriel-malaka.ga
+version: 4.2
+main: live.applecraft.Main
+authors: [Gabriel M.]
+website: https://www.applecraft.live
 description: Real time synchronization with game time.
 
 commands: 
