@@ -11,4 +11,4 @@
 
 ## Reporting a Vulnerability
 
-e-mail: gabriel.malaka@freenet.de
+e-mail: mcrealtime@freenet.de

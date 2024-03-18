@@ -72,7 +72,7 @@ _______________________________________________________________
 
 I wish you a lot of fun with my plugin!
 
-Here is the source code: https://github.com/GabrielJanLukasM/MCRealTime
+Here is the source code: https://github.com/sapentiae/MCRealTime
 
  
 
